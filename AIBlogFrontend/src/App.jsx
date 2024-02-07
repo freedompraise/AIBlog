@@ -1,19 +1,19 @@
-import React from 'react'
-import { Router, Route, Switch } from 'react-router-dom'
+import React from "react";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { Navbar } from "./components/index";
-import { Home } from "./pages/Home";
+import { Home } from "./pages/index";
 import "tailwindcss/tailwind.css"
 
 function App() {
 
   return (
     <div>
-    <Router>
+    <BrowserRouter>
     <Navbar />
-    <Switch> 
+    {/* <Switch> 
       <Route path="/" exact component={Home} />
-    </Switch>
-    </Router>
+    </Switch> */}
+    </BrowserRouter>
     </div>
   )
 }
