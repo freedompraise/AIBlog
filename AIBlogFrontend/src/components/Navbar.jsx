@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Navbar = () => {
@@ -54,21 +54,22 @@ const Navbar = () => {
     <header className="border-b-32 h-32 text-black border-gray-200 font-DM">
       <div className="container mx-auto py-4 px-4 ">
         <div className="flex items-center justify-between">
-          <div className="flex items-center justify-between">
             {/* Home button on left for small screens */}
             <NavLink
               to="/"
-              className="fixed left-0 text-white top-0 p-4 md:hidden"
+              className="left-0 text-white top-0 p-4 md:hidden"
               aria-label="Home"
             >
-              <FontAwesomeIcon icon={faHome} size="2x" />
+              <FontAwesomeIcon icon={faDoorOpen} size="2x" />
             </NavLink>
+            <div className='flex justify-end'>
             <button
               onClick={toggleNav}
-              className={`block md:hidden p-2 rounded text-gray-600 hover:bg-gray-200 focus:outline-none focus:bg-gray-300 z-50 fixed top-4 right-4 ${openNav? 'text-black' : 'text-white'}`}
+              className={`block md:hidden p-2 rounded text-gray-600 hover:bg-gray-200 focus:outline-none focus:bg-gray-300 z-50 top-4 right-4 ${openNav? 'text-black' : 'text-white'}`}
+
             >
               <FontAwesomeIcon icon={openNav ? faTimes : faBars} size="2x" />
-            </button>
+            </button>           
           </div>
           <nav className="md:flex h-58 space-x-4 hidden">
             {navList()}
@@ -86,8 +87,8 @@ const Navbar = () => {
           </ul>
         </div>
         </div>
-        <hr className="w-full border-b border-gray-300 mt-14 mt h-1/6" />
-        <div className="container mt-4 text-white flex space-x-44 text-2xl">
+        <hr className="w-full border-b border-gray-300 mt-8 mt h-1/6" />
+        <div className="container mt-4 text-white flex space-x-40 text-2xl">
               <FontAwesomeIcon icon={faFacebook} />
               <FontAwesomeIcon icon={faTwitter} />
               <FontAwesomeIcon icon={faInstagram} />
