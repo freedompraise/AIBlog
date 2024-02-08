@@ -1,18 +1,21 @@
 import React from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
-import { Navbar } from "./components/index";
+import { Navbar, NavNewsletter, FootNewsletter, Footer } from "./components/index";
 import { Home } from "./pages/index";
 import "tailwindcss/tailwind.css"
 
 function App() {
 
   return (
-    <div>
+    <div className="bg-slate-900">
     <BrowserRouter>
     <Navbar />
-    {/* <Switch> 
+    <NavNewsletter />
+    <Switch> 
       <Route path="/" exact component={Home} />
-    </Switch> */}
+    </Switch>
+    <FootNewsletter />
+    <Footer />
     </BrowserRouter>
     </div>
   )
