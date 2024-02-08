@@ -14,7 +14,7 @@ const Newsletter = () => {
   return (
     <form id="newsletter" className="bg-black mt-16" onSubmit={handleSubmit(onSubmit)}>
       <div className="container mx-auto flex flex-col items-center">
-        <h2 className="text-3xl font-bold text-white my-4 ">Subscribe to our newsletter</h2>
+        <h2 className="text-3xl text-white my-4 ">Subscribe to our newsletter</h2>
         <p className="text-white mb-4">Get the latest news and updates delivered straight to your inbox.</p>
 
         {isSubmitted ? (
