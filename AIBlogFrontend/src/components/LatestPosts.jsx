@@ -77,8 +77,8 @@ const LatestPosts = () => {
         {paginatedPosts.map((post) => (
           <div key={post.id} className="flex flex-col rounded-lg shadow-md">
             <img src={post.image} alt={post.title} className="w-full text-yellow-900 h-64 object-cover rounded-t-lg" />
-            <div className="p-2">
-              <h3 className="text-xl font-bold">{post.title}</h3>
+            <div className="">
+              <h3 className="text-xl text-yellow-500 font-sans">{post.title}</h3>
               <p className="text-white">{post.snippet}</p>
               <p className="text-sm text-blue-500 font-bold ">{post.name}</p>
             </div>

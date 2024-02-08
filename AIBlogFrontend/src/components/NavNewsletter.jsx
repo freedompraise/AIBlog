@@ -12,9 +12,9 @@ const NavNewsletter = () => {
   };
 
   return (
-    <form id="newsletter" className="bg-black mt-16 px-4" onSubmit={handleSubmit(onSubmit)}>
-      <div className="container mx-auto flex flex-col items-center">
-        <h2 className="text-3xl text-white my-4 ">Subscribe to our newsletter</h2>
+    <form id="newsletter" className="bg-black mt-16 px-4 h-64" onSubmit={handleSubmit(onSubmit)}>
+      <div className="container mx-auto flex flex-col text-center">
+        <h2 className="text-3xl font-sans text-white mt-6 mb-4">Subscribe to our newsletter</h2>
         <p className="text-white mb-4">Get the latest news and updates delivered straight to your inbox.</p>
 
         {isSubmitted ? (
