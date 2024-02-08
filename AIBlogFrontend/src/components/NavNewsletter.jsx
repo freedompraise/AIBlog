@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { useForm } from "react-hook-form";
 
-const Newsletter = () => {
+const NavNewsletter = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { register, handleSubmit, errors } = useForm();
 
@@ -42,4 +42,4 @@ const Newsletter = () => {
   );
 };
 
-export default Newsletter;
+export default NavNewsletter;
