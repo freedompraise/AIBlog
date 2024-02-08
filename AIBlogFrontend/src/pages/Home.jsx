@@ -1,10 +1,11 @@
 import React from "react";
-import { FeaturedPosts } from "../components/index";
+import { FeaturedPosts, LatestPosts } from "../components/index";
 
 const Home = () => {
     return (
         <div>
             <FeaturedPosts />
+            <LatestPosts />
         </div>
     );
 }
