@@ -13,8 +13,8 @@ const NavNewsletter = () => {
 
   return (
     <form id="newsletter" className="border rounder-lg border:bg-black bg-white mt-8 px-4 text-black" onSubmit={handleSubmit(onSubmit)}>
-      <div className="container mx-auto flex flex-col items-center">
-        <h2 className="text-3xl text-black my-4 ">Never Miss a Single Letter!</h2>
+      <div className="container mx-auto flex flex-col text-center">
+        <h2 className="text-2xl font-bold text-black my-4 ">Never Miss a Single Letter!</h2>
   
         {isSubmitted ? (
           <p className="text-center text-lg mb-4 font-semibold font-mono">
