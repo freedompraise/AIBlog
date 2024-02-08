@@ -35,7 +35,7 @@ const Navbar = () => {
             isPending ? "pending" : isActive ? "text-blue-900" : ""
           }
         >
-          Articles
+         Articles
         </NavLink>
         <NavLink
           to="/registration"
@@ -64,27 +64,26 @@ const Navbar = () => {
             </NavLink>
             <button
               onClick={toggleNav}
-              className={`block md:hidden p-2 rounded text-gray-600 hover:bg-gray-200 focus:outline-none focus:bg-gray-300 z-50 absolute top-4 right-4`}
+              className={`block md:hidden p-2 rounded text-gray-600 hover:bg-gray-200 focus:outline-none focus:bg-gray-300 z-50 absolute top-4 right-4 ${openNav? 'text-black' : 'text-white'}`}
             >
               <FontAwesomeIcon icon={openNav ? faTimes : faBars} size="2x" />
             </button>
           </div>
-          <nav className="md:flex flex-col h-58 fixed right-16 space-x-4 hidden">
+          <nav className="md:flex h-58 space-x-4 hidden">
             {navList()}
           </nav>
         </div>
-
         <div
           className={`
-            inset-0 fixed top-50 right-16 w-full h-screen bg-gray-800 bg-opacity-75 transition-all duration-300
+            inset-0 fixed top-50 left-0 w-full h-screen bg-gray-800 bg-opacity-75 transition-all duration-300
             ${openNav ? 'block' : 'hidden'}
           `}
         >
-          <div className=" container h-full bg-white py-8 px-6 items-center ml-96 overflow-auto">
-            <ul className="flex flex-col space-y-4 text-left">
+          <div className="container bg-white mx-auto fixed ml-96 flex h-full">
+          <ul className="flex flex-col space-y-4 px-4 mt-20 text-left">
             {navList()}
-            </ul>
-          </div>
+          </ul>
+        </div>
         </div>
       </div>
     </header>
@@ -92,4 +91,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
