@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
-import { Navbar, NavNewsletter } from "./components/index";
+import { Navbar, NavNewsletter, FootNewsletter } from "./components/index";
 import { Home } from "./pages/index";
 import "tailwindcss/tailwind.css"
 
@@ -14,6 +14,7 @@ function App() {
     <Switch> 
       <Route path="/" exact component={Home} />
     </Switch>
+    <FootNewsletter />
     </BrowserRouter>
     </div>
   )

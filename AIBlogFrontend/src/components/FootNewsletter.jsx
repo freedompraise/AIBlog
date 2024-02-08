@@ -12,13 +12,12 @@ const NavNewsletter = () => {
   };
 
   return (
-    <form id="newsletter" className="bg-black mt-16 px-4" onSubmit={handleSubmit(onSubmit)}>
+    <form id="newsletter" className="bg-white mt-8 px-4 text-black" onSubmit={handleSubmit(onSubmit)}>
       <div className="container mx-auto flex flex-col items-center">
-        <h2 className="text-3xl text-white my-4 ">Subscribe to our newsletter</h2>
-        <p className="text-white mb-4">Get the latest news and updates delivered straight to your inbox.</p>
-
+        <h2 className="text-3xl text-black my-4 ">Never Miss a Single Letter!</h2>
+  
         {isSubmitted ? (
-          <p className="text-center text-lg mb-4 font-semibold font-mono text-gray-400">
+          <p className="text-center text-lg mb-4 font-semibold font-mono">
             You've successfully subscribed!
           </p>
         ) : (
@@ -29,11 +28,11 @@ const NavNewsletter = () => {
               id="email"
               name="email"
               placeholder="johndoe@gmail.com"
-              className="border border-gray-700 rounded-md p-2 w-full mb-4 focus:border-indigo-500"
+              className="border border-gray-700 bg-white rounded-md p-2 w-full mb-4 focus:border-indigo-500 text-black"
               required
             />
             <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 w-full rounded-md mb-4">
-              SUBMIT
+              Sign Up
             </button>
           </div>
         )}
