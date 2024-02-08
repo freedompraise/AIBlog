@@ -51,7 +51,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-slate-900 border-b-32 h-32 text-black border-gray-200 font-DM">
+    <header className="border-b-32 h-32 text-black border-gray-200 font-DM">
       <div className="container mx-auto py-4 px-4 ">
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-between">
