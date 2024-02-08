@@ -1,10 +1,12 @@
 import React from "react";
+import { FeaturedPosts } from "../components/index";
 
-function Home () {
+const Home = () => {
     return (
-        <p className="text-black" >This is my home page</p>
+        <div>
+            <FeaturedPosts />
+        </div>
     );
 }
-
 
 export default Home;

@@ -11,9 +11,9 @@ function App() {
     <BrowserRouter>
     <Navbar />
     <Newsletter />
-    {/* <Switch> 
+    <Switch> 
       <Route path="/" exact component={Home} />
-    </Switch> */}
+    </Switch>
     </BrowserRouter>
     </div>
   )
