@@ -87,8 +87,8 @@ const Navbar = () => {
           </ul>
         </div>
         </div>
-        <hr className="w-full border-b border-gray-300 mt-8 mt h-1/6" />
-        <div className="container mt-4 text-white flex space-x-40 text-2xl">
+        <hr className="w-full border-b border-gray-300 mt-4 mt h-1/4" />
+        <div className="container max-width-[400px] justify-center flex flex-grow mt-4 w-full text-white grid grid-cols-4 mx-10 text-2xl">
               <FontAwesomeIcon icon={faFacebook} />
               <FontAwesomeIcon icon={faTwitter} />
               <FontAwesomeIcon icon={faInstagram} />
