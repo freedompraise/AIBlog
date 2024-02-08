@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -50,7 +51,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-gray-800 border-b-32 h-28 text-black border-gray-200 font-DM">
+    <header className="bg-slate-900 border-b-32 h-32 text-black border-gray-200 font-DM">
       <div className="container mx-auto py-4 px-4 ">
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-between">
@@ -60,7 +61,7 @@ const Navbar = () => {
               className="fixed left-0 text-white top-0 p-4 md:hidden"
               aria-label="Home"
             >
-              <FontAwesomeIcon icon={faHome} size="3x" />
+              <FontAwesomeIcon icon={faHome} size="2x" />
             </NavLink>
             <button
               onClick={toggleNav}
@@ -85,6 +86,13 @@ const Navbar = () => {
           </ul>
         </div>
         </div>
+        <hr className="w-full border-b border-gray-300 mt-14 mt h-1/6" />
+        <div className="container mt-4 text-white flex space-x-44 text-2xl">
+              <FontAwesomeIcon icon={faFacebook} />
+              <FontAwesomeIcon icon={faTwitter} />
+              <FontAwesomeIcon icon={faInstagram} />
+              <FontAwesomeIcon icon={faLinkedin} />
+            </div>
       </div>
     </header>
   );
