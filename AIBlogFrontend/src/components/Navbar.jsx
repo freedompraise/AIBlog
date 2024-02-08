@@ -65,7 +65,7 @@ const Navbar = () => {
             </NavLink>
             <button
               onClick={toggleNav}
-              className={`block md:hidden p-2 rounded text-gray-600 hover:bg-gray-200 focus:outline-none focus:bg-gray-300 z-50 top-4 right-4 ${openNav? 'text-black' : 'text-white'}`}
+              className={`block md:hidden p-2 rounded text-gray-600 hover:bg-gray-200 focus:outline-none focus:bg-gray-300 z-50 fixed top-4 right-4 ${openNav? 'text-black' : 'text-white'}`}
             >
               <FontAwesomeIcon icon={openNav ? faTimes : faBars} size="2x" />
             </button>
@@ -81,7 +81,7 @@ const Navbar = () => {
           `}
         >
           <div className="container bg-white mx-auto fixed ml-96 flex h-full">
-          <ul className="flex flex-col space-y-4 z-70 px-4 mt-20 text-left">
+          <ul className="flex flex-col space-y-4 px-4 mt-20 text-left">
             {navList()}
           </ul>
         </div>
