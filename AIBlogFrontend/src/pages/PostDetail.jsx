@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Prism } from 'react-prism'; // Library for syntax highlighting
-import rehypeRaw from 'rehype-raw'; // Library for rendering raw HTML from API
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const PostDetail = ({ match: { params: { slug } } }) => {
   const [post, setPost] = useState(null);
   const [error, setError] = useState(null);
 
-  // Example free API endpoint (replace with your actual API URL)
-  const apiUrl = `https://jsonplaceholder.typicode.com/posts/${slug}`;
+  // Replace with your actual DRF API URL
+  const apiUrl = `http://localhost:8000/api/posts/${slug}`;
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -45,11 +44,9 @@ const PostDetail = ({ match: { params: { slug } } }) => {
       <img src={`https://placeimg.com/640/480/${category}`} alt={category} className="w-full mb-4" />
 
       <div className="content">
-        {/* Render content with syntax highlighting and raw HTML support */}
-        <Prism
-          language="html" // Assuming content is HTML-like
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+        <SyntaxHighlighter language="html" style={okaidia} showLineNumbers>
+          {content}
+        </SyntaxHighlighter>
       </div>
 
       <h2 className="text-2xl font-bold mb-4">Comments</h2>
