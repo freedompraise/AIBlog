@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { Navbar, NavNewsletter, FootNewsletter, Footer } from "./components/index";
-import { Home } from "./pages/index";
+import { Home, PostDetail } from "./pages/index";
 import "tailwindcss/tailwind.css"
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
     <NavNewsletter />
     <Switch> 
       <Route path="/" exact component={Home} />
+      <Route path="/post/:slug" component={PostDetail} />
     </Switch>
     <FootNewsletter />
     <Footer />
