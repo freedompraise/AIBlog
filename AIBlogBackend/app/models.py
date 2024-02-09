@@ -16,7 +16,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=100, blank=True)
     category = models.ForeignKey(Category, on_delete=models.SET_DEFAULT, default="AI")
     content = models.TextField()
-    snippet = models.TextField()
+    snippet = models.CharField(max_length=100)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to="images/")
     image_alt_text = models.CharField(max_length=50)
