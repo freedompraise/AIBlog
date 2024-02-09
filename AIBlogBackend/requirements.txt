@@ -1,0 +1,13 @@
+cloudinary==1.36.0
+Django==3.2.11
+django-cors-headers==4.1.0
+django-cloudinary-storage==0.3.0
+djangorestframework==3.14.0
+django_sslserver==0.22
+djangorestframework-simplejwt==5.3.0
+django-allauth==0.58.2
+dj-database-url==1.2.0
+python-dotenv==0.19.0
+psycopg2-binary==2.9.5
+Pillow==8.3.2
+gunicorn==20.1.0
