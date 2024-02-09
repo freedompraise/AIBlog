@@ -3,12 +3,8 @@ import { Link } from 'react-router-dom';
 import { Prism } from 'react-prism'; // Library for syntax highlighting
 import rehypeRaw from 'rehype-raw'; // Library for rendering raw HTML from API
 
-// Assuming you have a component for loading indicators
-import LoadingIndicator from './LoadingIndicator';
-
 const PostDetail = ({ match: { params: { slug } } }) => {
   const [post, setPost] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   // Example free API endpoint (replace with your actual API URL)
@@ -25,17 +21,12 @@ const PostDetail = ({ match: { params: { slug } } }) => {
         setPost(data);
       } catch (err) {
         setError(err.message);
-      } finally {
-        setIsLoading(false);
-      }
+      } 
     };
 
     fetchPost();
   }, [apiUrl, slug]);
 
-  if (isLoading) {
-    return <LoadingIndicator />;
-  }
 
   if (error) {
     return <div className="error">Error: {error}</div>;
