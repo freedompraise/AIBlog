@@ -52,7 +52,7 @@ const Navbar = () => {
 
   return (
     <header className="border-b-32 h-32 text-black border-gray-200 font-DM">
-      <div className="container mx-auto py-4 px-4 ">
+      <div className="container mx-auto py-4 px-1">
         <div className="flex items-center justify-between">
             {/* Home button on left for small screens */}
             <NavLink
@@ -77,17 +77,17 @@ const Navbar = () => {
         </div>
         <div
           className={`
-            inset-0 fixed top-50 left-0 w-full h-screen bg-gray-800 bg-opacity-75 transition-all duration-300
+            inset-0 fixed top-50 left-0 w-1/2 h-screen bg-gray-800 bg-opacity-75 transition-all duration-300
             ${openNav ? 'block' : 'hidden'}
           `}
         >
-          <div className="container bg-white mx-auto fixed ml-96 flex h-full">
-          <ul className="flex flex-col space-y-4 px-4 mt-20 text-left">
+          <div className="container bg-white w-1/2 right-0 mx-auto fixed flex h-full">
+          <ul className="flex flex-col space-y-2 px-2 mt-20 text-left">
             {navList()}
           </ul>
         </div>
         </div>
-        <hr className="w-full border-b border-gray-300 mt-4 mt h-1/4" />
+        <hr className="border-b border-gray-300 mt-2 mt h-1/4 px-4" />
         <div className="container max-width-[400px] justify-center flex flex-grow mt-4 w-full text-white grid grid-cols-4 mx-10 text-2xl">
               <FontAwesomeIcon icon={faFacebook} />
               <FontAwesomeIcon icon={faTwitter} />
