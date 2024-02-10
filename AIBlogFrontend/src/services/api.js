@@ -15,12 +15,12 @@ export const getPosts = async () => {
 
     
 export const getPost = async (slug) => {
-  try {
-    const response = await axios.get(`${postsUrl}${slug}`);
-    console.log(response.data);
-    return response.data; 
-  } catch (error) {
-    console.error("Error fetching post:", error);
-    throw error; 
-  }
-};
+    console.log("slug", slug);
+    try {
+        const response = await axios.get(`${postsUrl}${slug}/`);
+        return response.data; 
+    } catch (error) {
+        console.error("Error fetching post:", error);
+        throw error; 
+    }
+    };
