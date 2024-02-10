@@ -32,13 +32,13 @@ const PostDetail = ({ match: { params: { slug } } }) => {
   }
 
   return (
-    <div className="container px-4">
+    <div className="container text-center mx-auto max-w-screen-xl mt-8 px-4">
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
       <p className="mb-4">
         Posted on: {new Date(post.date_created).toLocaleDateString()} in {post.category}
       </p>
 
-      <img src={`https://placeimg.com/640/480/${post.category}`} alt={post.category} className="w-full mb-4" />
+      <img src={`https://placeimg.com/640/480/${post.category}`} alt={post.image_alt_text} className="w-full mb-4" />
 
       <div className="overflow-x-hidden">
         <SyntaxHig
