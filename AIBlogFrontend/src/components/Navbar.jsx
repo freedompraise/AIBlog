@@ -52,7 +52,7 @@ const Navbar = () => {
 
   return (
     <header className="border-b-32 h-32 text-black border-gray-200 font-DM">
-      <div className="container mx-auto py-4 px-4 ">
+      <div className="container mx-auto py-4 px-4 max-w-screen-x">
         <div className="flex items-center justify-between">
             {/* Home button on left for small screens */}
             <NavLink
