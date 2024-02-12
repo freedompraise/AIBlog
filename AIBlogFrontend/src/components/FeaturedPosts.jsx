@@ -32,7 +32,7 @@ const FeaturedPosts = () => {
 
   return (
     <section className="container mx-auto mt-4 px-4">
-      <h2 className="text-2xl mt-3 font-mono text-center">Featured Posts</h2>
+      <h2 className="text-3xl mt-3 font-mono text-center">Featured Posts</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {posts && 
           posts.map((post) => (

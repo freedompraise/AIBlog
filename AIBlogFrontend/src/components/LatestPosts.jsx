@@ -33,7 +33,7 @@ const LatestPosts = () => {
 
   return (
     <section className="container mx-auto px-4">
-      <h2 className="text-2xl text-center mt-4">Latest Posts</h2>
+      <h2 className="text-3xl text-center font-mono mt-4">Latest Posts</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {paginatedPosts.map((post) => (
           <div key={post.slug} className="flex flex-col rounded-lg shadow-md">
