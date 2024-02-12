@@ -28,7 +28,7 @@ const PostDetail = ({ match: { params: { slug } } }) => {
   }
 
   if (!post) {
-    return <div>Loading...</div>;
+    return <div className='p-4 text-center'>Loading...</div>;
   }
 
   return (
