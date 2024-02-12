@@ -21,6 +21,14 @@ const FeaturedPosts = () => {
   }
   , []);
 
+  if (loading) {
+    return (
+      <section className="container mx-auto mt-4 px-4">
+        <h2 className="text-2xl mt-3 text-center">Featured Posts</h2>
+        <p>Loading...</p>
+      </section>
+    );
+  }
 
   return (
     <section className="container mx-auto mt-4 px-4">

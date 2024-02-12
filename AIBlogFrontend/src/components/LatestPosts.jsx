@@ -27,6 +27,10 @@ const LatestPosts = () => {
     setCurrentPage(newPage);
   };
 
+  if (posts.length === 0) {
+    return <div className='text-center p-4'> Loading...</div>;
+  }
+
   return (
     <section className="container mx-auto px-4">
       <h2 className="text-2xl text-center mt-4">Latest Posts</h2>
