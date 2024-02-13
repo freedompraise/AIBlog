@@ -1,7 +1,8 @@
 // api.js
 import axios from "axios";
 
-const postsUrl = "http://localhost:8000/api/posts/";
+// const postsUrl = "http://localhost:8000/api/posts/";
+const postsUrl = "https://eliteaiblog-v1.onrender.com/api/posts/";
 
 export const getPosts = async () => {
   try {
