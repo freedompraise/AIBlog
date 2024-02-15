@@ -4,7 +4,6 @@ import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Prism as SyntaxHig } from 'react-syntax-highlighter';
 
 const PostDetail = ({ match: { params: { slug } } }) => {
-
   const [post, setPost] = useState(null);
   const [error, setError] = useState(null);
  
