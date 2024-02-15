@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import { getPosts } from '../services/api';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const FeaturedPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -36,8 +37,9 @@ const FeaturedPosts = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {posts && 
           posts.map((post) => (
-            <div className="relative">
-          <img
+            <div key={post.slug} className="relative">
+              <Link to={`/post/${post.slug}`}>
+              <img
             src= {post.image}
             alt={post.image_alt_text}
             className="w-full h-64 object-cover rounded-lg"
@@ -45,6 +47,7 @@ const FeaturedPosts = () => {
           <h3 className="absolute top-0 left-0 bg-black text-white px-4 py-2 rounded-tl-lg">
             {post.title}
           </h3>
+              </Link>
         </div>
           ))
         }

@@ -4,7 +4,6 @@ import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Prism as SyntaxHig } from 'react-syntax-highlighter';
 
 const PostDetail = ({ match: { params: { slug } } }) => {
-
   const [post, setPost] = useState(null);
   const [error, setError] = useState(null);
  
@@ -24,11 +23,11 @@ const PostDetail = ({ match: { params: { slug } } }) => {
   , [slug]);
 
   if (error) {
-    return <div className='p-4 text-center' >Error loading post: {error.message}</div>;
+    return <div className='p-4 text-center mt-4' >Error loading post: {error.message}</div>;
   }
 
   if (!post) {
-    return <div className='p-4 text-center'>Loading...</div>;
+    return <div className='p-4 mt-4 text-center'>Loading...</div>;
   }
 
   return (

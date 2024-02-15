@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom';
 const LatestPosts = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading ] = useState(false);
   const postsPerPage = 3;
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const data = await getPosts();
+        setLoading(false);
         setPosts(data);
       } catch (error) {
         console.error('Error fetching posts:', error);
@@ -27,8 +29,13 @@ const LatestPosts = () => {
     setCurrentPage(newPage);
   };
 
-  if (posts.length === 0) {
-    return <div className='text-center p-4'> Loading...</div>;
+  if (loading) {
+    return (
+      <section className="container mx-auto mb-auto px-4">
+        <h2 className="text-2xl mt-3 font-mono text-center">Latest Posts</h2>
+        <p>Loading...</p>
+      </section>
+    );
   }
 
   return (

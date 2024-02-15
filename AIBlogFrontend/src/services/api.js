@@ -3,11 +3,19 @@ import axios from "axios";
 
 // const postsUrl = "http://localhost:8000/api/posts/";
 const postsUrl = "https://eliteaiblog-v1.onrender.com/api/posts/";
+const cachedPosts = JSON.parse(localStorage.getItem("posts"));
 
 export const getPosts = async () => {
   try {
-    const response = await axios.get(postsUrl);
-    return response.data; 
+    if (cachedPosts) {
+      return (cachedPosts)
+    } else{
+      
+      const response = await axios.get(postsUrl);
+      localStorage.setItem("posts", JSON.stringify(response.data));
+      return response.data; 
+    }
+    
   } catch (error) {
     console.error("Error fetching posts:", error);
     throw error; 
@@ -16,10 +24,14 @@ export const getPosts = async () => {
 
     
 export const getPost = async (slug) => {
-    console.log("slug", slug);
     try {
-        const response = await axios.get(`${postsUrl}${slug}/`);
+      const cachedPost = cachedPosts.find((post) => post.slug  === slug )
+        if (cachedPost){
+          return cachedPost;
+        } else {
+          const response = await axios.get(`${postsUrl}${slug}/`);
         return response.data; 
+        }
     } catch (error) {
         console.error("Error fetching post:", error);
         throw error; 
