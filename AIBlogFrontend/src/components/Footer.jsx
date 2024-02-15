@@ -10,11 +10,11 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-800 text-black bg-white py-2">
-      <div className="container mx-auto px-4 flex flex-col items-center space-y-8">
-        <h2 className="text-2xl font-bold">About This Blog</h2>
+      <div className="container mx-auto px-4 flex flex-col items-center">
+        <h2 className="text-2xl mt-6 mb-4 font-bold">About This Blog</h2>
         <p className="text-lg text-center ">{paragraph}</p>
 
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex mt-4 items-center justify-center gap-4">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faFacebook} size="2x" />
           </a>
@@ -26,7 +26,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <p className="text-sm text-center">&copy; {new Date().getFullYear()}. Elite Global AI. All rights reserved.</p>
+        <p className="text-sm text-center mt-4">&copy; {new Date().getFullYear()}. Elite Global AI. All rights reserved.</p>
       </div>
     </footer>
   );

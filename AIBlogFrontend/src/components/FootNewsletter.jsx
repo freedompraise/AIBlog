@@ -12,9 +12,9 @@ const NavNewsletter = () => {
   };
 
   return (
-    <form id="newsletter" className="border rounder-lg border:bg-black bg-white mt-8 px-4 text-black" onSubmit={handleSubmit(onSubmit)}>
+    <form id="newsletter" className="border rounder-lg border:bg-black bg-white px-4 text-black" onSubmit={handleSubmit(onSubmit)}>
       <div className="container mx-auto flex flex-col text-center">
-        <h2 className="text-2xl font-bold text-black my-4 ">Never Miss a Single Letter!</h2>
+        <h2 className="text-xl font-bold text-black mt-8 mb-4 ">Never Miss a Single Letter!</h2>
   
         {isSubmitted ? (
           <p className="text-center text-lg mb-4 font-semibold font-mono">
@@ -28,7 +28,7 @@ const NavNewsletter = () => {
               id="email"
               name="email"
               placeholder="johndoe@gmail.com"
-              className="border border-gray-700 bg-white rounded-md p-2 w-full mb-4 focus:border-indigo-500 text-black"
+              className="border border-gray-700 bg-white rounded-md p-2 w-full mb-2 focus:border-indigo-500 text-black"
               required
             />
             <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 w-full rounded-md mb-4">

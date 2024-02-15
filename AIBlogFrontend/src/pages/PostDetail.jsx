@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getPost } from '../services/api';
-import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Prism as SyntaxHig } from 'react-syntax-highlighter';
+import { FormattedText } from '../components';
 
 const PostDetail = ({ match: { params: { slug } } }) => {
   const [post, setPost] = useState(null);
@@ -31,26 +30,16 @@ const PostDetail = ({ match: { params: { slug } } }) => {
   }
 
   return (
-    <div className="container text-center mx-auto max-w-screen-xl mt-8 px-4">
-      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-      <p className="mb-4">
+    <div className="container text-center py-2 text-black bg-white mx-auto max-w-screen-sm px-4">
+      <h1 className="text-5xl font-bold mt-8 mb-4 overflow-hidden ">{post.title}</h1>
+      <p className="font-sans">
         Posted on: {new Date(post.date_created).toLocaleDateString()} in {post.category}
       </p>
 
-      <img src={`https://placeimg.com/640/480/${post.category}`} alt={post.image_alt_text} className="w-full mb-4" />
+      <img src={`https://placeimg.com/640/480/${post.category}`} alt={post.image_alt_text} className="w-full my-4 font-sans" />
 
-      <div className="overflow-x-hidden">
-        <SyntaxHig
-        hlighter language="html" style={okaidia} showLineNumbers>
-          {post.content}
-        </SyntaxHig>
-      </div>
-
-
-      <div className="">
-        {/* This section is not functional yet, so just display a placeholder */}
-      <h2 className="text-2xl font-bold mb-2 mt-12">Comments</h2>
-        <p>Comments coming soon ...</p>
+      <div className="max-w-screen-sm px-2 bg-white text-black">
+        <FormattedText text={post.content} />
       </div>
     </div>
   );
