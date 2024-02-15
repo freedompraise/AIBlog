@@ -41,13 +41,6 @@ const PostDetail = ({ match: { params: { slug } } }) => {
       <div className="max-w-screen-sm px-2 bg-white text-black">
         <FormattedText text={post.content} />
       </div>
-
-
-      <div className="">
-        {/* This section is not functional yet, so just display a placeholder */}
-      <h2 className="text-2xl font-bold mb-2 mt-12">Comments</h2>
-        <p>Comments coming soon ...</p>
-      </div>
     </div>
   );
 };
