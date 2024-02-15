@@ -31,7 +31,7 @@ const PostDetail = ({ match: { params: { slug } } }) => {
 
   return (
     <div className="container text-center py-2 text-black bg-white mx-auto max-w-screen-xl px-4">
-      <h1 className="text-3xl font-bold mt-8 mb-4">{post.title}</h1>
+      <h1 className="text-5xl font-bold mt-8 mb-4">{post.title}</h1>
       <p className="font-sans">
         Posted on: {new Date(post.date_created).toLocaleDateString()} in {post.category}
       </p>
