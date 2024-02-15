@@ -30,7 +30,6 @@ export const getPost = async (slug) => {
           return cachedPost;
         } else {
           const response = await axios.get(`${postsUrl}${slug}/`);
-          console.log("Not cached");
         return response.data; 
         }
     } catch (error) {
