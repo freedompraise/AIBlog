@@ -30,13 +30,13 @@ const PostDetail = ({ match: { params: { slug } } }) => {
   }
 
   return (
-    <div className="container text-center text-black bg-white mx-auto max-w-screen-xl mt-8 px-4">
-      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-      <p className="mb-4">
+    <div className="container text-center py-2 text-black bg-white mx-auto max-w-screen-xl px-4">
+      <h1 className="text-3xl font-bold mt-8 mb-4">{post.title}</h1>
+      <p className="font-sans">
         Posted on: {new Date(post.date_created).toLocaleDateString()} in {post.category}
       </p>
 
-      <img src={`https://placeimg.com/640/480/${post.category}`} alt={post.image_alt_text} className="w-full mb-4" />
+      <img src={`https://placeimg.com/640/480/${post.category}`} alt={post.image_alt_text} className="w-full my-4 font-sans" />
 
       <div className="max-w-screen-sm px-2 bg-white text-black">
         <FormattedText text={post.content} />
