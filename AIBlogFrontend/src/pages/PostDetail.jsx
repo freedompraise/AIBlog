@@ -36,7 +36,7 @@ const PostDetail = ({ match: { params: { slug } } }) => {
         Posted on: {new Date(post.date_created).toLocaleDateString()} in {post.category}
       </p>
 
-      <img src={`https://placeimg.com/640/480/${post.category}`} alt={post.image_alt_text} className="w-full my-4 font-sans" />
+      <img src={post.image} alt={post.image_alt_text} className="w-full my-4 font-sans" />
 
       <div className="max-w-screen-sm px-2 bg-white text-black">
         <FormattedText text={post.content} />
