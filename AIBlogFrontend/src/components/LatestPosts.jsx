@@ -47,7 +47,7 @@ const LatestPosts = () => {
             <Link to={`/post/${post.slug}`}>
             <img src={post.image} alt={post.title} className="w-full text-yellow-900 h-64 object-cover rounded-t-lg" />
             <div className="">
-              <h3 className="text-xl text-yellow-500 font-sans">{post.title}</h3>
+              <h3 className="text-xl text-yellow-500 font-sans pr-2">{post.title}</h3>
               <p className="text-white">{post.snippet}</p>
               <p className="text-sm text-blue-500 font-bold ">AI Blog Posts</p>
             </div>
