@@ -23,7 +23,7 @@ class PostSerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ["id", "name", "description"]
+        fields = ["name", "description"]
 
 
 class UserSerializer(serializers.ModelSerializer):
