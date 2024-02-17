@@ -44,7 +44,7 @@ const FeaturedPosts = () => {
             alt={post.image_alt_text}
             className="w-full h-64 object-cover rounded-lg"
           />
-          <h3 className="absolute top-0 left-0 bg-black text-white px-4 py-2 rounded-tl-lg">
+          <h3 className="absolute top-0 left-0 text-white px-4 py-2 rounded-tl-lg">
             {post.title}
           </h3>
               </Link>
