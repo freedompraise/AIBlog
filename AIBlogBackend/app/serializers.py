@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 
 
 class PostSerializer(serializers.ModelSerializer):
+    category = serializers.CharField(source="category.name", read_only=True)
+
     class Meta:
         model = Post
         fields = [
