@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { Navbar, NavNewsletter, FootNewsletter, Footer } from "./components/index";
-import { Home, PostDetail, About } from "./pages/index";
+import { Home, PostDetail, About, Articles } from "./pages/index";
 import "tailwindcss/tailwind.css"
 import clearLocalStorage from "./services/cache";
 
@@ -10,7 +10,7 @@ clearLocalStorage();
 function App() {
 
   return (
-    <div className="bg-slate-900">
+    <div className="bg-slate-900 sm:max-w-screen-sm mx-auto ">
 
     <BrowserRouter>
     <Navbar />
@@ -19,6 +19,7 @@ function App() {
       <Route path="/" exact component={Home} />
       <Route path="/post/:slug" component={PostDetail} />
       <Route path="/about" component={About} />
+      <Route path="/articles" component={Articles} />
     </Switch>
     <FootNewsletter />
     <Footer />
