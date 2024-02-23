@@ -87,7 +87,7 @@ const Navbar = () => {
           </ul>
         </div>
         </div>
-        <hr className="border-b border-gray-300 mt-2 mt h-1/4 px-4" />
+        <hr className="border-b border-gray-300 mt-2 mt h-0 px-4" />
         <div className="container max-width-[400px] justify-center flex flex-grow mt-4 w-full text-white grid grid-cols-4 mx-10 text-2xl">
           <a href='https://www.facebook.com/profile.php?id=61555984266860' >
             <FontAwesomeIcon icon={faFacebook} />
