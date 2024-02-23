@@ -5,6 +5,7 @@ import { FormattedText } from '../components';
 const PostDetail = ({ match: { params: { slug } } }) => {
   const [post, setPost] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
  
   
   useEffect(() => {
@@ -12,6 +13,7 @@ const PostDetail = ({ match: { params: { slug } } }) => {
       try {
         const data = await getPost(slug);
         setPost(data);
+        setLoading(false);
       } catch (error) {
         setError(error);
       }
@@ -25,7 +27,7 @@ const PostDetail = ({ match: { params: { slug } } }) => {
     return <div className='p-4 text-center mt-4' >Error loading post: {error.message}</div>;
   }
 
-  if (!post) {
+  if (loading) {
     return <div className='p-4 mt-4 text-center'>Loading...</div>;
   }
 
