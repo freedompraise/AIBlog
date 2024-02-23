@@ -5,7 +5,6 @@ import { Home, PostDetail } from "./pages/index";
 import "tailwindcss/tailwind.css"
 import clearLocalStorage from "./services/cache";
 
-localStorage.clear();
 clearLocalStorage();
 
 function App() {
