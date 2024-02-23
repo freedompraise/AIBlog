@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div>
             <FeaturedPosts />
-            <LatestPosts />
+            {/* <LatestPosts /> */}
         </div>
     );
 }
