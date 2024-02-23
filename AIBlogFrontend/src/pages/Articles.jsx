@@ -1,13 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import { getPosts } from '../services/api';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
-
-const posts = getPosts();
 
 const Articles = () => {
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+          try {
+            const data = await getPosts();
+            setPosts(data.slice(0, 3));
+            setLoading(false);
+          }
+          catch (error) {
+            console.error('Error fetching posts:', error);
+          }
+        }
+    
+        fetchPosts();
+      }
+      , []);
 
     
-if (!posts) {
+if (loading) {
     return (
         <section className="container mx-auto mb-auto px-4">
           <p className='text-center' >Loading...</p>
