@@ -31,7 +31,7 @@ const Navbar = () => {
           Contact
         </NavLink>
         <NavLink
-          to="/services"
+          to="/contact"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-blue-900" : ""
           }
@@ -39,7 +39,7 @@ const Navbar = () => {
          Articles
         </NavLink>
         <NavLink
-          to="/registration"
+          to="/about"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-blue-900" : ""
           }
