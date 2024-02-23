@@ -3,11 +3,15 @@ import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { Navbar, NavNewsletter, FootNewsletter, Footer } from "./components/index";
 import { Home, PostDetail } from "./pages/index";
 import "tailwindcss/tailwind.css"
+import clearLocalStorage from "./services/cache";
+
+clearLocalStorage();
 
 function App() {
 
   return (
     <div className="bg-slate-900">
+
     <BrowserRouter>
     <Navbar />
     <NavNewsletter />

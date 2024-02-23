@@ -4,8 +4,8 @@ import { FeaturedPosts, LatestPosts } from "../components/index";
 const Home = () => {
     return (
         <div>
-            <FeaturedPosts />
-            {/* <LatestPosts /> */}
+            {/* <FeaturedPosts /> */}
+            <LatestPosts />
         </div>
     );
 }

@@ -13,6 +13,8 @@ export const getPosts = async () => {
       
       const response = await axios.get(postsUrl);
       localStorage.setItem("posts", JSON.stringify(response.data));
+      const timestamp = new Date().getTime();
+      localStorage.setItem("timestamp", timestamp);
       return response.data; 
     }
     
