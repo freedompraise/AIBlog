@@ -15,13 +15,13 @@ const Footer = () => {
         <p className="text-lg text-center ">{paragraph}</p>
 
         <div className="flex mt-4 items-center justify-center gap-4">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=61555984266860" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faFacebook} size="2x" />
           </a>
-          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/EliteglobalAI?t=gqPw7vEh43XQNoIXYuz_VA&s=09" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faTwitter} size="2x" />
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="hhttps://www.instagram.com/eliteglobalai_?igsh=MWdpcm96Y202M3U3OQ==" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faInstagram} size="2x" />
           </a>
         </div>

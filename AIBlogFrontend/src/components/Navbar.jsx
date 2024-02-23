@@ -89,10 +89,18 @@ const Navbar = () => {
         </div>
         <hr className="border-b border-gray-300 mt-2 mt h-1/4 px-4" />
         <div className="container max-width-[400px] justify-center flex flex-grow mt-4 w-full text-white grid grid-cols-4 mx-10 text-2xl">
-              <FontAwesomeIcon icon={faFacebook} />
-              <FontAwesomeIcon icon={faTwitter} />
-              <FontAwesomeIcon icon={faInstagram} />
-              <FontAwesomeIcon icon={faLinkedin} />
+          <a href='https://www.facebook.com/profile.php?id=61555984266860' >
+            <FontAwesomeIcon icon={faFacebook} />
+          </a>
+          <a href='https://x.com/EliteglobalAI?t=gqPw7vEh43XQNoIXYuz_VA&s=09'>
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+          <a href='https://www.instagram.com/eliteglobalai_?igsh=MWdpcm96Y202M3U3OQ=='>
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a href='https://www.linkedin.com/company/elite-global-ai/'>
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
             </div>
       </div>
     </header>
