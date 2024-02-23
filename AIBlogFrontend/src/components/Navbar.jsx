@@ -51,7 +51,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="border-b-32 h-32 text-black border-gray-200 font-DM overflow-x-auto ">
+    <header className="container border-b-32 h-32 text-black border-gray-200 font-DM">
       <div className="container mx-auto py-4 px-1">
         <div className="flex items-center justify-between">
             {/* Home button on left for small screens */}
