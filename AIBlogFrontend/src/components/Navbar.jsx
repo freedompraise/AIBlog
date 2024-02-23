@@ -71,7 +71,7 @@ const Navbar = () => {
               <FontAwesomeIcon icon={openNav ? faTimes : faBars} size="2x" />
             </button>           
           </div>
-          <nav className="md:flex h-58 space-x-4 hidden">
+          <nav onClick={toggleNav} className="md:flex h-58 space-x-4 hidden">
             {navList()}
           </nav>
         </div>
