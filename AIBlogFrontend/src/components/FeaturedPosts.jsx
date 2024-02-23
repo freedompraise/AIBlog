@@ -26,7 +26,7 @@ const FeaturedPosts = () => {
     return (
       <section className="container mx-auto mb-auto px-4">
         <h2 className="text-2xl mt-3 font-mono text-center">Featured Posts</h2>
-        <p>Loading...</p>
+        <p className='text-center' >Loading...</p>
       </section>
     );
   }
