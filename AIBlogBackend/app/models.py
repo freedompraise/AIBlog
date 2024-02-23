@@ -12,6 +12,7 @@ class Category(models.Model):
 
 
 class Post(models.Model):
+    AUTHORS = [("admin", "admin"), ("ruk", "Rukevwe Omoro")]
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, blank=True)
     category = models.ForeignKey(
@@ -19,7 +20,7 @@ class Post(models.Model):
     )
     content = models.TextField()
     snippet = models.CharField(max_length=100)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.CharField(max_length=50, choices=AUTHORS, default="admin")
     image = models.ImageField(upload_to="images/")
     image_alt_text = models.CharField(max_length=50)
     date_created = models.DateTimeField(auto_now_add=True)
