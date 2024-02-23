@@ -16,13 +16,13 @@ const Footer = () => {
 
         <div className="flex mt-4 items-center justify-center gap-4">
           <a href="https://www.facebook.com/profile.php?id=61555984266860" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon className='text-blue-300' icon={faFacebook} size="2x" />
+            <FontAwesomeIcon className='text-blue-700' icon={faFacebook} size="2x" />
           </a>
           <a href="https://x.com/EliteglobalAI?t=gqPw7vEh43XQNoIXYuz_VA&s=09" className='text-black' target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faXTwitter} size="2x" />
           </a>
           <a href="hhttps://www.instagram.com/eliteglobalai_?igsh=MWdpcm96Y202M3U3OQ==" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faInstagram} className='text-pink-400' size="2x" />
+            <FontAwesomeIcon icon={faInstagram} className='text-pink-700' size="2x" />
           </a>
         </div>
 
