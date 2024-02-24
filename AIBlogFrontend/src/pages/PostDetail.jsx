@@ -14,6 +14,7 @@ const PostDetail = ({ match: { params: { slug } } }) => {
         const data = await getPost(slug);
         setPost(data);
         setLoading(false);
+        document.title = `${data.title} - Elite AI Blog`;
       } catch (error) {
         setError(error);
       }

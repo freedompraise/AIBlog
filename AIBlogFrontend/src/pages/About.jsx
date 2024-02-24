@@ -1,6 +1,8 @@
 import React from "react";
 
 const About = () => {
+    document.title = `About - Elite AI Blog`;
+
     return (
         <div className="container mx-auto px-4"
         >

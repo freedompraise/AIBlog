@@ -1,6 +1,8 @@
 import React from "react";
 
 const Contact = () => {
+    document.title = `Contact - Elite AI Blog`;
+    
     return (
         <div className="container mx-auto px-4"
         >

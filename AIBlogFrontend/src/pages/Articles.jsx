@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 const Articles = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
+    document.title = `All Posts - Elite AI Blog`;
 
     useEffect(() => {
         const fetchPosts = async () => {
