@@ -16,33 +16,37 @@ const Navbar = () => {
       <>
         <NavLink
           to="/"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-blue-900" : ""
-          }
+          className={({ isActive }) =>
+          ( isActive ? "text-blue-900" : ""
+    )}
+          onClick = {toggleNav}
         >
           Home
         </NavLink>
         <NavLink
           to="/contact"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-blue-900" : ""
-          }
+          className={({ isActive }) =>
+            ( isActive ? "text-blue-900" : ""
+    )}
+          onClick = {toggleNav}
         >
           Contact
         </NavLink>
         <NavLink
           to="/articles"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-blue-900" : ""
-          }
+          className={({ isActive }) =>
+            ( isActive ? "text-blue-900" : ""
+    )}
+          onClick = {toggleNav}
         >
          Articles
         </NavLink>
         <NavLink
           to="/about"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-blue-900" : ""
-          }
+          className={({ isActive }) =>
+            ( isActive ? "text-blue-900" : ""
+    )}
+          onClick = {toggleNav}
         >
           About
         </NavLink>
