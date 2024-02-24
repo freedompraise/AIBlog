@@ -40,7 +40,7 @@ const PostDetail = ({ match: { params: { slug } } }) => {
 
       <img src={post.image} alt={post.image_alt_text} className="w-full my-4 font-sans" />
 
-      <div className="px-2 bg-white text-black">
+      <div className="px-2 bg-white text-left">
         <FormattedText text={post.content} />
       </div>
     </div>
