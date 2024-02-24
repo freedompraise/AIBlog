@@ -3,9 +3,9 @@ import axios from "axios";
 
 // const postsUrl = "http://localhost:8000/api/posts/";
 const postsUrl = "https://eliteaiblog-v1.onrender.com/api/posts/";
-const cachedPosts = JSON.parse(localStorage.getItem("posts"));
 
 export const getPosts = async () => {
+  const cachedPosts = JSON.parse(localStorage.getItem("posts"));
   try {
     if (cachedPosts) {
       return (cachedPosts)
@@ -26,6 +26,7 @@ export const getPosts = async () => {
 
     
 export const getPost = async (slug) => {
+  const cachedPosts = JSON.parse(localStorage.getItem("posts"));
     try {
       const cachedPost = cachedPosts.find((post) => post.slug  === slug )
         if (cachedPost){
