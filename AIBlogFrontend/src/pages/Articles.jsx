@@ -40,6 +40,13 @@ if (loading) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {posts.map((post, index) => (
                     <div key={index} className="bg-white shadow-lg p-4">
+                        <Link to={`/post/${post.slug}`}>
+                            <img
+                                src={post.image}
+                                alt={post.image_alt_text}
+                                className="w-full h-64 object-cover rounded-lg"
+                            />
+                        </Link>
                         <h2 className="text-xl font-bold">{post.title}</h2>
                         <p className="text-gray-600">{post.snippet}</p>
                     </div>
