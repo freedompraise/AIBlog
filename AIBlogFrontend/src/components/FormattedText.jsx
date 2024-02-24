@@ -5,7 +5,7 @@ const FormattedText = ({ text }) => {
   const formattedText = text
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
     .replace(/_(.*?)_/g, '<em>$1</em>') // Italic
-    .replace(/-(.*?)-/g, '<del>$1</del>') // Strikethrough
+    // .replace(/-(.*?)-/g, '<del>$1</del>') // Strikethrough
     .replace(/=(.*?)=/g, '<mark>$1</mark>') // Highlighted
     .replace(/`(.*?)`/g, '<code>$1</code>') // Monospace
     .replace(/\^(.*?)\^/g, '<sup>$1</sup>') // Superscript
