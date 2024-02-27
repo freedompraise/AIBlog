@@ -11,15 +11,15 @@ const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="bg-white shadow-lg p-4">
 
-                    <h2 className="text-2xl font-bold">Let's Connect!</h2>
+                    <h2 className="text-3xl mt-4 font-bold">Let's Connect!</h2>
 
                   <form className="mt-4 text-black ">
                     <label className="block mb-2" htmlFor="name">Name</label>
-                    <input className="w-full bg-white p-2 border border-gray-300 rounded" type="text" id="name" name="name" required />
+                    <input className="w-full bg-white p-2 border border-gray-300 rounded focus:border-indigo-500" type="text" id="name" name="name" required />
                     <label className="block mt-4 mb-2" htmlFor="email">Email</label>
-                    <input className="w-full bg-white p-2 border border-gray-300 rounded" type="email" id="email" name="email" required />
+                    <input className="w-full bg-white p-2 border border-gray-300 rounded focus:border-indigo-500" type="email" id="email" name="email" required />
                     <label className="block mt-4 mb-2" htmlFor="message">Message</label>
-                    <textarea className="w-full h-56 bg-white p-2 border border-gray-300 rounded" id="message" name="message" required></textarea>
+                    <textarea className="w-full h-56 bg-white p-2 border border-gray-300 rounded focus:border-indigo-500" id="message" name="message" required></textarea>
                     <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold p-2 mt-4 rounded-md" type="submit">Send</button>
 
                     </form>
