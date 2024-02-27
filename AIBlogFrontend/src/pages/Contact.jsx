@@ -20,7 +20,7 @@ const Contact = () => {
                     <input className="w-full bg-white p-2 border border-gray-300 rounded" type="email" id="email" name="email" required />
                     <label className="block mt-4 mb-2" htmlFor="message">Message</label>
                     <textarea className="w-full h-56 bg-white p-2 border border-gray-300 rounded" id="message" name="message" required></textarea>
-                    <button className="w-full bg-indigo-700 hover:bg-indigo-600 text-white p-2 mt-4 rounded-md" type="submit">Send</button>
+                    <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold p-2 mt-4 rounded-md" type="submit">Send</button>
 
                     </form>
                         
