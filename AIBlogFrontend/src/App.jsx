@@ -4,7 +4,7 @@ import { Navbar, NavNewsletter, FootNewsletter, Footer } from "./components/inde
 import { Home, PostDetail, About, Articles, Contact } from "./pages/index";
 import "tailwindcss/tailwind.css"
 import clearLocalStorage from "./services/cache";
-import { Analytics } from "@vitejs/plugin-react";
+import { Analytics } from "@vercel/analytics/react";
 
 clearLocalStorage();
 
