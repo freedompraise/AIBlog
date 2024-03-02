@@ -7,9 +7,9 @@ const clearLocalStorage = () => {
     const now = new Date().getTime();
     const timeDifference = now - timestamp;
     const minutesDifference = timeDifference / 60000;
-    if (minutesDifference > 60) {
+    if (minutesDifference > 360) {
         localStorage.clear();
-    } // Clear local storage if the difference is greater than 60 minutes
+    } // Clear local storage if the difference is greater than 6 hours
 }
 export default clearLocalStorage;
 
