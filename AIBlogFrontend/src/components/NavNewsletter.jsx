@@ -14,11 +14,11 @@ const NavNewsletter = () => {
   return (
     <form id="newsletter" className="container bg-black mt-8 px-4 overflow-auto" onSubmit={handleSubmit(onSubmit)}>
       <div className="container mx-auto flex flex-col text-center">
-        <h2 className="text-3xl font-sans mt-6 mb-4">Subscribe to our newsletter</h2>
+        <h2 className="text-3xl font-sans mt-6 mb-4 text-white">Subscribe to our newsletter</h2>
         <p className="text-white mb-4">Get the latest news and updates delivered straight to your inbox.</p>
 
         {isSubmitted ? (
-          <p className="text-center text-lg mb-4 font-semibold font-mono text-gray-400">
+          <p className="text-lg mb-4 font-semibold font-mono text-gray-400">
             You've successfully subscribed!
           </p>
         ) : (
@@ -32,7 +32,7 @@ const NavNewsletter = () => {
               className="border border-gray-700 rounded-md p-2 w-full mb-4 focus:border-indigo-500"
               required
             />
-            <button className="overflow-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 w-full rounded-md mb-8">
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 w-full rounded-md mb-8">
               SUBMIT
             </button>
           </div>
