@@ -21,39 +21,32 @@ const FeaturedPosts = () => {
     fetchPosts();
   }
   , []);
-
-  if (loading) {
-    return (
-      <section className="container mx-auto mb-auto px-4">
-        <h2 className="text-2xl mt-3 font-mono text-center">Featured Posts</h2>
-        <p className='text-center' >Loading...</p>
-      </section>
-    );
-  }
-
   return (
     <section className="container mx-auto mt-4 px-4 overflow-auto">
       <h2 className="text-3xl mt-3 font-mono text-center">Featured Posts</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {posts && 
-          posts.map((post) => (
-            <div key={post.slug} className="relative">
-              <Link to={`/post/${post.slug}`}>
-              <img
-            src= {post.image}
-            alt={post.image_alt_text}
-            className="w-full h-64 object-cover rounded-lg"
-          />
-          <h3 className="absolute top-0 left-0 text-white px-4 py-2 rounded-tl-lg">
-            {post.title}
-          </h3>
-              </Link>
+      {loading ? (
+        <p className="text-center text-white">Loading...</p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {posts &&
+            posts.map((post) => (
+              <div key={post.slug} className="relative">
+                <Link to={`/post/${post.slug}`}>
+                  <img
+                    src={post.image}
+                    alt={post.image_alt_text}
+                    className="w-full h-64 object-cover rounded-lg"
+                  />
+                  <h3 className="absolute top-0 left-0 text-white px-4 py-2 rounded-tl-lg">
+                    {post.title}
+                  </h3>
+                </Link>
+              </div>
+            ))}
         </div>
-          ))
-        }
-        
-      </div>
-      <hr className="my-4 h-1/2 " />
+      )}
+
+      <hr className="my-4 h-1/2" />
     </section>
   );
 };
