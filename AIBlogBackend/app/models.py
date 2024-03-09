@@ -21,7 +21,7 @@ class Post(models.Model):
     content = models.TextField()
     snippet = models.CharField(max_length=100)
     author = models.CharField(max_length=50, choices=AUTHORS, default="admin")
-    image = models.ImageField(upload_to="images/")
+    image = models.ImageField(upload_to="images/", blank=True, null=True)
     image_alt_text = models.CharField(max_length=50)
     date_created = models.DateTimeField(auto_now_add=True)
 
