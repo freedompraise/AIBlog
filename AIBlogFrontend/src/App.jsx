@@ -15,7 +15,7 @@ function App() {
     <Analytics />
     <BrowserRouter>
     <Navbar />
-    <NavNewsletter />
+    {/* <NavNewsletter /> */}
     <Switch> 
       <Route path="/" exact component={Home} />
       <Route path="/post/:slug" component={PostDetail} />

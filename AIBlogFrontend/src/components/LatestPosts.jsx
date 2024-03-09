@@ -30,7 +30,7 @@ const LatestPosts = () => {
   };
 
   return (
-    <section className="container mx-auto px-4">
+    <section className="container mt-8 mx-auto px-4">
       <h2 className="text-3xl text-center font-mono mt-4">Latest Posts</h2>
       {loading ? (
         <p className="text-white">Loading...</p>
@@ -41,7 +41,7 @@ const LatestPosts = () => {
               <div key={post.slug} className="flex flex-col rounded-lg shadow-md">
                 <Link to={`/post/${post.slug}`}>
                   <img
-                    src={post.image}
+                    src= "/white.webp"
                     alt={post.title}
                     className="w-full h-64 object-cover rounded-t-lg"
                   />
