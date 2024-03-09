@@ -31,9 +31,9 @@ const LatestPosts = () => {
 
   return (
     <section className="container mt-8 mx-auto px-4">
-      <h2 className="text-3xl text-center font-mono mt-4">Latest Posts</h2>
+      <h2 className="text-xl text-left font-mono mt-4">Latest Posts</h2>
       {loading ? (
-        <p className="text-white">Loading...</p>
+        <p className="">Loading...</p>
       ) : (
         <>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -47,7 +47,7 @@ const LatestPosts = () => {
                   />
                   <div className="">
                     <h3 className="text-xl text-yellow-500 font-sans pr-2">{post.title}</h3>
-                    <p className="text-white">{post.snippet}</p>
+                    <p className="">{post.snippet}</p>
                     <p className="text-sm text-blue-500 font-bold">AI Blog Posts</p>
                   </div>
                 </Link>
