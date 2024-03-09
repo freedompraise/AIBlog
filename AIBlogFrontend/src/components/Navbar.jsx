@@ -3,12 +3,18 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import NavNewsletter from './NavNewsletter';
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
+  const [openNewsletter, setOpenNewsletter] = useState(false);
 
   const toggleNav = () => {
     setOpenNav(!openNav);
+  };
+
+  const toggleNewsletter = () => {
+    setOpenNewsletter(!openNewsletter);
   };
 
   const navList = () => {
@@ -55,26 +61,27 @@ const Navbar = () => {
   };
 
   return (
-    <header className="container border-b-32 h-32 text-black border-gray-200 font-DM">
+    <header className="container border-b-32 h-32 border-gray-200 font-DM">
       <div className="container mx-auto py-4 px-1">
         <div className="flex items-center justify-between">
             {/* Home button on left for small screens */}
-            <NavLink
-              to="/"
-              className="left-0 text-white top-0 p-4 md:hidden"
-              aria-label="Home"
-            >
-              <FontAwesomeIcon icon={faDoorOpen} size="2x" />
-            </NavLink>
-            <div className='flex justify-end'>
             <button
               onClick={toggleNav}
-              className={`block md:hidden p-2 rounded text-gray-600 hover:bg-gray-200 focus:outline-none focus:bg-gray-300 z-50 top-4 right-4 ${openNav? 'text-black' : 'text-white'}`}
+              className={`block md:hidden p-2 rounded hover:bg-gray-200 focus:outline-none focus:bg-gray-300 z-50 top-4 right-4 ${openNav? 'text-white' : 'text-black'}`}
 
             >
-              <FontAwesomeIcon icon={openNav ? faTimes : faBars} size="2x" />
-            </button>           
+              <FontAwesomeIcon icon={openNav ? faTimes : faBars} />
+            </button>  
+
+            <NavLink to="/" className="text-2xl font-bold text-blue-500">
+            <img src="/logo.png" alt="Elite Global AI" className="h-10" />
+            </NavLink>
+            
+            <div className='flex justify-end ml-10'>
+           <button onClick={toggleNewsletter} className='font-sans text-white px-2 bg-blue-500 text-sm mr-4'> SUBSCRIBE
+            </button> 
           </div>
+
           <nav onClick={toggleNav} className="md:flex h-58 space-x-4 hidden">
             {navList()}
           </nav>

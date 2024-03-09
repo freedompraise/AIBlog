@@ -34,7 +34,8 @@ class Post(models.Model):
             self.slug = slugify(" ".join(self.title.split()[:3]))
         super().save(*args, **kwargs)
 
-    unique_together = ("title", "slug")
+    class Meta:
+        unique_together = ("title", "slug")
 
 
 class Comment(models.Model):
