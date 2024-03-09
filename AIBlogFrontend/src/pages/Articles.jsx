@@ -44,7 +44,7 @@ if (loading) {
                         <Link to={`/post/${post.slug}`}>
                             <img
                                 src={post.image}
-                                alt={post.image_alt_text}
+                                alt={post.title}
                                 className="w-full h-64 object-cover rounded-lg"
                             />
                         </Link>

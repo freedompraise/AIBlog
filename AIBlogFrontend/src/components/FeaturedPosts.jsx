@@ -34,7 +34,7 @@ const FeaturedPosts = () => {
                 <Link to={`/post/${post.slug}`}>
                   <img
                     src={post.image}
-                    alt={post.image_alt_text}
+                    alt={post.title}
                     className="w-full h-64 object-cover rounded-lg"
                   />
                   <h3 className="absolute top-0 left-0 text-white px-4 py-2 rounded-tl-lg">
