@@ -11,7 +11,7 @@ clearLocalStorage();
 function App() {
 
   return (
-    <div className="bg-slate-900 sm:max-w-screen-sm mx-auto ">
+    <div className="bg-white text-black sm:max-w-screen-sm mx-auto ">
     <Analytics />
     <BrowserRouter>
     <Navbar />
