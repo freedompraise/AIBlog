@@ -24,7 +24,7 @@ const LatestPosts = () => {
 
 
   return (
-    <section className="container mt-8 mx-auto px-4">
+    <section className="container my-8 mx-auto px-4">
       <div className="rectangle text-left text-white px-4 py-1 bg-black font-mono mt-4">LATEST POSTS</div>
       {loading ? (
         <p className="">Loading...</p>
