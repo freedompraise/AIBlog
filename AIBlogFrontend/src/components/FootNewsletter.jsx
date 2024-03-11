@@ -12,7 +12,7 @@ const NavNewsletter = () => {
   };
 
   return (
-    <form id="newsletter" className="border rounded-lg border-black bg-white px-4 text-black overflow-auto" onSubmit={handleSubmit(onSubmit)}>
+    <form id="newsletter" className="border border-opacity-25 rounded-lg border-black bg-white px-4 text-black overflow-auto" onSubmit={handleSubmit(onSubmit)}>
       <div className="container mx-auto flex flex-col text-center">
         <h2 className="text-xl font-bold mt-8 mb-4">Never Miss a Single Letter!</h2>
 
