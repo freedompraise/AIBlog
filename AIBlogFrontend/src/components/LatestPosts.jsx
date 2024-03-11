@@ -50,7 +50,7 @@ const LatestPosts = () => {
                     {post.title}
                     </h3>
 
-                    <p className="">Rukevwe Omoro</p>
+                    <p className="">{post.author}</p>
                     <p className="text-sm text-blue-700">{post.category}</p>
                   </div>
                 </Link>

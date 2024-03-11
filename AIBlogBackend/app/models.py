@@ -12,7 +12,7 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    AUTHORS = [("admin", "admin"), ("ruk", "Rukevwe Omoro")]
+    AUTHORS = [("admin", "admin"), ("Rukevwe Omoro", "Ruk")]
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, blank=True)
     category = models.ForeignKey(
