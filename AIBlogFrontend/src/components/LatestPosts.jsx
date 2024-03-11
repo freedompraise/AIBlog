@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 
 const LatestPosts = () => {
   const [posts, setPosts] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading ] = useState(false);
-  const postsPerPage = 3;
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -23,11 +21,7 @@ const LatestPosts = () => {
   }
   , []);
 
-  const paginatedPosts = posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
 
-  const handlePageChange = (newPage) => {
-    setCurrentPage(newPage);
-  };
 
   return (
     <section className="container mt-8 mx-auto px-4">
@@ -57,26 +51,6 @@ const LatestPosts = () => {
               </div>
             ))}
           </div>
-
-          {/* <div className="flex justify-center">
-            {currentPage > 1 && (
-              <button
-                onClick={() => handlePageChange(currentPage - 1)}
-                className="text-blue-500 hover:text-blue-700 mr-2"
-              >
-                Previous
-              </button>
-            )}
-            <span className="font-bold px-2">{currentPage}</span>
-            {currentPage < Math.ceil(posts.length / postsPerPage) && (
-              <button
-                onClick={() => handlePageChange(currentPage + 1)}
-                className="text-blue-500 hover:text-blue-700 ml-2"
-              >
-                Next
-              </button>
-            )}
-          </div> */}
         </>
       )}
     </section>
