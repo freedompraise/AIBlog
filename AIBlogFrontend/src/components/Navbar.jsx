@@ -61,7 +61,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="container border-b-32 h-32 border-gray-200 font-DM">
+    <header className="container border-b-32 h-28 border-gray-200 font-DM">
       <div className="container mx-auto py-4 px-1">
         <div className="flex items-center justify-between">
             {/* Home button on left for small screens */}
@@ -78,7 +78,7 @@ const Navbar = () => {
             </NavLink>
             
             <div className='flex justify-end ml-10'>
-           <button onClick={toggleNewsletter} className='font-sans text-white px-2 bg-blue-500 text-sm mr-4'> SUBSCRIBE
+           <button onClick={toggleNewsletter} className='font-sans text-white p-1 bg-blue-700 text-xs mr-4'> SUBSCRIBE
             </button> 
           </div>
 
