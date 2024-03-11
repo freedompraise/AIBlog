@@ -8,19 +8,17 @@ export const getPosts = async () => {
   const cachedPosts = JSON.parse(localStorage.getItem("posts"));
   try {
     if (cachedPosts) {
-      return (cachedPosts)
-    } else{
-      
+      return cachedPosts.sort((a, b) => (a.category === "Pilot Post" ? -1 : 1)); // Sort cached data
+    } else {
       const response = await axios.get(postsUrl);
-      const timestamp = new Date().getTime();
-      localStorage.setItem("posts", JSON.stringify(response.data));
-      localStorage.setItem("timestamp", timestamp);
-      return response.data; 
+      const sortedPosts = response.data.sort((a, b) => (a.category === "Pilot Post" ? -1 : 1)); // Sort fetched data
+      localStorage.setItem("posts", JSON.stringify(sortedPosts));
+      localStorage.setItem("timestamp", new Date().getTime());
+      return sortedPosts;
     }
-    
   } catch (error) {
     console.error("Error fetching posts:", error);
-    throw error; 
+    throw error;
   }
 };
 
