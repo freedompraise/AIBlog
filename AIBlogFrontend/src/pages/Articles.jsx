@@ -12,7 +12,7 @@ const Articles = () => {
         const fetchPosts = async () => {
           try {
             const data = await getPosts();
-            setPosts(data.slice(0, 3));
+            setPosts(data);
             setLoading(false);
           }
           catch (error) {
@@ -43,9 +43,9 @@ if (loading) {
                     <div key={index} className="bg-white shadow-lg p-4">
                         <Link to={`/post/${post.slug}`}>
                             <img
-                                src={post.image}
+                                src={post.image ?post.image : "/white.webp"}
                                 alt={post.title}
-                                className="w-full h-64 object-cover rounded-lg"
+                                className="w-full h-64 object-contain rounded-lg"
                             />
                         </Link>
                         <h2 className="text-xl font-bold">{post.title}</h2>
@@ -53,7 +53,7 @@ if (loading) {
                     </div>
                 ))}
 
-            /</div>
+            </div>
 
         </div>
     );
