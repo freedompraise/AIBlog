@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { getPost } from '../services/api';
 import { FormattedText } from '../components';
+import { useHistory } from 'react-router-dom';
 
 const PostDetail = ({ match: { params: { slug } } }) => {
+  const history = useHistory();
+
   const [post, setPost] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -17,6 +20,7 @@ const PostDetail = ({ match: { params: { slug } } }) => {
         document.title = `${data.title} - Elite AI Blog`;
       } catch (error) {
         setError(error);
+        setLoading(false);
       }
     };
 
@@ -25,7 +29,7 @@ const PostDetail = ({ match: { params: { slug } } }) => {
   , [slug]);
 
   if (error) {
-    return <div className="p-4 text-center mt-4">Error loading post: {error.message}</div>;
+    {history.push('/')}
   }
 
   if (loading) {
