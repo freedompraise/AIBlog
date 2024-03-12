@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getPosts } from '../services/api';
 import { Link } from 'react-router-dom';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const LatestPosts = () => {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading ] = useState(false);
+  const [loading, setLoading ] = useState(true);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -22,13 +24,18 @@ const LatestPosts = () => {
   , []);
 
 
+if (loading) {
+  return (
+    <div className="flex px-4  flex-col space-y-4 justify-center text-black sm:h-50 lg:h-100 items-center h-64">
+      <FontAwesomeIcon className='fa-spin' icon={faSpinner} spin size="3x" />
+      <p className="text-2xl font-mono">"The best things in life are worth waiting for." - <span className='text-blue-700 font-sm'>Abraham Lincoln</span></p>
+    </div>
+  );
+}
 
   return (
-    <section className="container mt-8 mx-auto px-4">
+    <section className="container my-8 mx-auto px-4">
       <div className="rectangle text-left text-white px-4 py-1 bg-black font-mono mt-4">LATEST POSTS</div>
-      {loading ? (
-        <p className="">Loading...</p>
-      ) : (
         <>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {posts.map((post) => (
@@ -52,7 +59,6 @@ const LatestPosts = () => {
             ))}
           </div>
         </>
-      )}
     </section>
   );
 };
