@@ -8,7 +8,7 @@ export const getPosts = async () => {
   const cachedPosts = JSON.parse(localStorage.getItem("posts"));
   try {
     if (cachedPosts) {
-      return cachedPosts.sort((a, b) => (a.category === "Pilot Post" ? -1 : 1)); // Sort cached data
+      return cachedPosts 
     } else {
       const response = await axios.get(postsUrl);
       const sortedPosts = response.data.sort((a, b) => (a.category === "Pilot Post" ? -1 : 1)); // Sort fetched data
