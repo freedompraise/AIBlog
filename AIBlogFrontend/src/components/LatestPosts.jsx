@@ -26,7 +26,7 @@ const LatestPosts = () => {
 
 if (loading) {
   return (
-    <div className="flex px-4  flex-col space-y-4 justify-center text-black sm:h-50 lg:h-100 items-center h-64">
+    <div className="flex px-4 flex-col space-y-4 justify-center text-black h-100 items-center">
       <FontAwesomeIcon className='fa-spin' icon={faSpinner} spin size="3x" />
       <p className="text-2xl font-mono">"The best things in life are worth waiting for." - <span className='text-blue-700 font-xs'>Abraham Lincoln</span></p>
     </div>
