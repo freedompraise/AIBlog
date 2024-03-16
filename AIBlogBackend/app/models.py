@@ -19,7 +19,7 @@ class Post(models.Model):
         Category, on_delete=models.SET_DEFAULT, default="AI", null=True
     )
     content = models.TextField()
-    snippet = models.CharField(max_length=100)
+    snippet = models.CharField(max_length=100, blank=True, null=True)
     author = models.CharField(max_length=50, choices=AUTHORS, default="admin")
     image = models.ImageField(upload_to="images/", blank=True, null=True)
     image_alt_text = models.CharField(max_length=50, blank=True, null=True)
