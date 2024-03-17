@@ -13,7 +13,7 @@ const LatestPosts = () => {
       try {
         const data = await getPosts();
         setLoading(false);
-        setPosts(data);
+        setPosts(data.slice(0,9));
       } catch (error) {
         console.error('Error fetching posts:', error);
       }
