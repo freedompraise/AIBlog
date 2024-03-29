@@ -3,3 +3,6 @@ __pycache__
 db.sqlite3
 .env
 images
+**/*.sh
+**/*.csv
+**/*.json
