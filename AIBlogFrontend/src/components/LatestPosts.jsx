@@ -41,7 +41,7 @@ if (loading) {
               <div key={post.slug} className="flex p-2 flex-col rounded-lg shadow-md">
                 <Link to={`/post/${post.slug}`}>
                   <img
-                    src= "/white.webp"
+                    src= {post.image ? post.image : '/default-photo.webp'}
                     alt={post.title}
                     className="w-full h-64 object-cover rounded-t-lg"
                   />
