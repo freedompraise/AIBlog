@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes} from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import NavNewsletter from './NavNewsletter';
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);

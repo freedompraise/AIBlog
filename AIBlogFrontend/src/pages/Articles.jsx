@@ -1,7 +1,6 @@
 import { React, useEffect, useState } from 'react';
-import { getPosts } from '../services/api';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-
+import { supabase } from "../services/supabaseClient";
 
 const Articles = () => {
     const [posts, setPosts] = useState([]);
@@ -10,20 +9,17 @@ const Articles = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-          try {
-            const data = await getPosts();
-            setPosts(data);
-            setLoading(false);
-          }
-          catch (error) {
-            console.error('Error fetching posts:', error);
-          }
-        }
-    
+            try {
+                const { data } = await supabase.from("Post").select("*");
+                setPosts(data);
+                setLoading(false);
+            } catch (error) {
+                console.error("Error fetching posts:", error);
+            }
+        };
         fetchPosts();
-      }
-      , []);
-
+    }
+    , []);  
     
 if (loading) {
     return (
