@@ -41,12 +41,12 @@ if (loading) {
               <div key={post.slug} className="flex p-2 flex-col rounded-lg shadow-md">
                 <Link to={`/post/${post.slug}`}>
                   <img
-                    src= "/white.webp"
+                    src= {post.image ? post.image : '/default-photo.webp'}
                     alt={post.title}
                     className="w-full h-64 object-cover rounded-t-lg"
                   />
                   <div className="">
-                    <h3  className={`text-2xl font-sans text-semibold pr-2 ${post.category === "Pilot Post" ? 'text-3xl underline text-uppercase' : ''}`}>
+                    <h3  className={`text-2xl font-sans text-semibold pr-2 ${post.slug === "unleashing-africa's-potential" ? 'text-3xl underline text-uppercase' : ''}`}>
                     {post.title}
                     </h3>
                     <p className="text-sm text-blue-700">{post.category}</p>
