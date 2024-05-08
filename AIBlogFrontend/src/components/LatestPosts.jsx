@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { getPosts } from '../services/api';
 import { Link } from 'react-router-dom';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { supabase } from '../services/supabaseClient';
 
 const LatestPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -11,17 +11,16 @@ const LatestPosts = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const data = await getPosts();
+        const { data } = await supabase.from('Post').select('*');
+        setPosts(data);
         setLoading(false);
-        setPosts(data.slice(0,9));
       } catch (error) {
         console.error('Error fetching posts:', error);
       }
     };
 
     fetchPosts();
-  }
-  , []);
+  }, []);
 
 
 if (loading) {
