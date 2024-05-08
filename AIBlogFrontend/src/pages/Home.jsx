@@ -1,10 +1,9 @@
 import React from "react";
-import { FeaturedPosts, LatestPosts } from "../components/index";
+import { LatestPosts } from "../components/index";
 
 const Home = () => {
     return (
         <div>
-            {/* <FeaturedPosts /> */}
             <LatestPosts />
         </div>
     );
