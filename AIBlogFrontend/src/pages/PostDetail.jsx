@@ -49,7 +49,7 @@ const PostDetail = ({ match: { params: { slug } } }) => {
       <h1 className="text-5xl font-bold mt-8">{post.title}</h1>
       <h3 className='text-3xl mt-2 font-semibold mb-4'>{post.snippet}</h3>
       <p className="font-sans">
-        Posted on: {new Date(post.date_created).toLocaleDateString()} in {post.category}
+        Posted on: {new Date(post.created_at).toLocaleDateString()}
       </p>
 
       <img src={post.image ? post.image : '/default-photo.webp'} alt={post.title} className="w-full my-4 font-sans" />
