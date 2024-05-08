@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getPost } from '../services/api';
+import { supabase } from '../services/supabaseClient';
 import { FormattedText } from '../components';
 import { useHistory } from 'react-router-dom';
 
@@ -14,19 +14,27 @@ const PostDetail = ({ match: { params: { slug } } }) => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const data = await getPost(slug);
-        setPost(data);
+        const { data, error } = await supabase
+          .from('Post')
+          .select('*')
+          .eq('slug', slug)
+          .single();
+
+        if (error) {
+          setError(error.message);
+        } else {
+          setPost(data);
+        }
+
         setLoading(false);
-        document.title = `${data.title} - Elite AI Blog`;
       } catch (error) {
-        setError(error);
+        setError(error.message);
         setLoading(false);
       }
     };
 
     fetchPost();
-  }
-  , [slug]);
+  }, [slug]);
 
   if (error) {
     {history.push('/')}
