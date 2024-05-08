@@ -46,7 +46,7 @@ if (loading) {
                     className="w-full h-64 object-cover rounded-t-lg"
                   />
                   <div className="">
-                    <h3  className={`text-2xl font-sans text-semibold pr-2 ${post.category === "Pilot Post" ? 'text-3xl underline text-uppercase' : ''}`}>
+                    <h3  className={`text-2xl font-sans text-semibold pr-2 ${post.slug === "unleashing-africa's-potential" ? 'text-3xl underline text-uppercase' : ''}`}>
                     {post.title}
                     </h3>
                     <p className="text-sm text-blue-700">{post.category}</p>
