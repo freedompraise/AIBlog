@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { getPosts } from '../services/api';
+import { fetchPostData } from '../services/api';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 
@@ -10,19 +10,18 @@ const Articles = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-          try {
-            const data = await getPosts();
-            setPosts(data);
-            setLoading(false);
-          }
-          catch (error) {
-            console.error('Error fetching posts:', error);
-          }
-        }
-    
+            try {
+                const posts = await fetchPostData();
+                setPosts(posts);
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
         fetchPosts();
-      }
-      , []);
+    }
+    , []);
 
     
 if (loading) {

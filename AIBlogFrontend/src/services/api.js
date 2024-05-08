@@ -1,8 +1,9 @@
 // api.js
 import axios from "axios";
-
+import { supabase } from "./supabaseClient";
 // const postsUrl = "http://localhost:8000/api/posts/";
 const postsUrl = "https://eliteaiblog-v1.onrender.com/api/posts/";
+
 
 export const getPosts = async () => {
   const cachedPosts = JSON.parse(localStorage.getItem("posts"));
@@ -38,3 +39,18 @@ export const getPost = async (slug) => {
         throw error; 
     }
     };
+
+  
+  export const fetchPostData = async () => {
+    const { data, error } = await supabase
+      .from("Post")
+      .select("*");
+      // .order("id", { ascending: false });
+    if (error) {
+      console.error("Error fetching posts:", error);
+      throw error;
+    } else {
+      console.log("Data fetched successfully:", data);
+    }
+  };
+
