@@ -6,15 +6,22 @@ import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/fre
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
-  const [openNewsletter, setOpenNewsletter] = useState(false);
 
   const toggleNav = () => {
     setOpenNav(!openNav);
   };
 
-  const toggleNewsletter = () => {
-    setOpenNewsletter(!openNewsletter);
-  };
+  const scrollToFooter = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+  }
+
+  const handleClick = () => {
+    toggleNewsletter(); 
+    scrollToFooter();
+  }
 
   const navList = () => {
     return (
@@ -77,7 +84,7 @@ const Navbar = () => {
             </NavLink>
             
             <div className='flex justify-end ml-10'>
-           <button onClick={toggleNewsletter} className='font-sans text-white p-1 bg-blue-700 text-xs mr-4'> SUBSCRIBE
+           <button onClick={handleClick} className='font-sans rounded-sm text-white p-1 bg-blue-700 text-xs mr-4'> SUBSCRIBE
             </button> 
           </div>
 
