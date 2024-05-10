@@ -17,7 +17,7 @@ const NavNewsletter = () => {
         <h2 className="text-xl font-bold my-4">Never Miss a Single Letter!</h2>
 
         {isSubmitted ? (
-          <p className="text-lg mb-4 font-semibold font-mono">
+          <p className="text-lg text-blue-600 mb-4 font-semibold font-mono">
             You've successfully subscribed!
           </p>
         ) : (

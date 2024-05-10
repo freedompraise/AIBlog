@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 const NavNewsletter = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = () => {
     setTimeout(() => {
