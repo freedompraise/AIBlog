@@ -3,23 +3,24 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes} from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { getFooterHeight } from '../services/util';
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
-
   const toggleNav = () => {
     setOpenNav(!openNav);
   };
 
   const scrollToFooter = () => {
+    const footerHeight = getFooterHeight(); 
+    const scrollHeight = document.body.scrollHeight - footerHeight; 
     window.scrollTo({
-      top: document.body.scrollHeight,
+      top: scrollHeight,
       behavior: 'smooth'
     });
-  }
+  };  
 
   const handleClick = () => {
-    toggleNewsletter(); 
     scrollToFooter();
   }
 
