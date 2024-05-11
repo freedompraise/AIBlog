@@ -11,11 +11,10 @@ clearLocalStorage();
 function App() {
 
   return (
-    <div className="bg-white text-black sm:max-w-screen-sm mx-auto ">
+    <div className="bg-white w-screen overflow-x-hidden flex flex-col text-black sm:max-w-screen-sm mx-auto ">
     <Analytics />
     <BrowserRouter>
     <Navbar />
-    {/* <NavNewsletter /> */}
     <Switch> 
       <Route path="/" exact component={Home} />
       <Route path="/post/:slug" component={PostDetail} />
