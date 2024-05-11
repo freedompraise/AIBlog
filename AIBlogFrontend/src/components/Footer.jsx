@@ -1,15 +1,15 @@
-import React from 'react';
+import { React, useRef }from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
-  // Generate random Italian paragraph using lorem ipsum generator
+  const footerRef = useRef(null);
   const paragraph = `
     ${`Subscribe to Elite Global AI's newsletters to receive notifications, information and skill training on how AI is changing the world.`}
   `.trim();
 
   return (
-    <footer className="bg-gray-800 text-black bg-white py-2">
+    <footer ref={footerRef} id="footer" className="bg-gray-800 text-black bg-white py-2">
       <div className="container mx-auto px-4 flex flex-col items-center">
         <h2 className="text-2xl mt-6 mb-4 font-bold">About This Blog</h2>
         <p className="text-lg text-center">{paragraph}</p>
