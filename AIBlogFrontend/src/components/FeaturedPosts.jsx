@@ -1,5 +1,4 @@
 import { React, useEffect, useState } from 'react';
-import { getPosts } from '../services/api';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const FeaturedPosts = () => {
@@ -9,7 +8,6 @@ const FeaturedPosts = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const data = await getPosts();
         setPosts(data.slice(0, 3));
         setLoading(false);
       }

@@ -1,12 +1,10 @@
 import React from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
-import { Navbar, NavNewsletter, FootNewsletter, Footer } from "./components/index";
+import { Navbar, FootNewsletter, Footer } from "./components/index";
 import { Home, PostDetail, About, Articles, Contact } from "./pages/index";
 import "tailwindcss/tailwind.css"
-import clearLocalStorage from "./services/cache";
 import { Analytics } from "@vercel/analytics/react";
 
-clearLocalStorage();
 
 function App() {
 
