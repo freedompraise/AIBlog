@@ -23,7 +23,7 @@ const Articles = () => {
     
 if (loading) {
     return (
-        <section className="container mx-auto mb-auto px-4">
+        <section className="container bg-white h-100 mx-auto mb-auto px-4">
           <p className='text-center' >Loading...</p>
         </section>
       );

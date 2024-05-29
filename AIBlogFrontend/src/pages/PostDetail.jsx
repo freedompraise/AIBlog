@@ -41,7 +41,7 @@ const PostDetail = ({ match: { params: { slug } } }) => {
   }
 
   if (loading) {
-    return <div className="p-4 mt-4 text-center">Loading...</div>;
+    return <div className="p-4 h-100 bg-white mt-4 text-center">Loading...</div>;
   }
 
   return (

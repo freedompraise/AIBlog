@@ -18,6 +18,7 @@
     "@material-tailwind/react": "^2.1.8",
     "@supabase/supabase-js": "^2.43.1",
     "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.11",
     "axios": "^1.6.7",
     "craco": "^0.0.3",
     "react": "^18.2.0",
