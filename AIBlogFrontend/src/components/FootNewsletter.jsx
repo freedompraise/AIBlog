@@ -21,7 +21,7 @@ const NavNewsletter = () => {
             You've successfully subscribed!
           </p>
         ) : (
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col px-0 lg:px-36 w-full">
             <input
               {...register("email", { required: true })}
               type="email"
