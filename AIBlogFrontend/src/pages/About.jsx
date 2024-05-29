@@ -7,7 +7,7 @@ const About = () => {
         <div className="container mx-auto px-4 lg:px-40 text-center bg-white overflow-auto mb-4 text-black"
         >
             <h1 className="text-3xl font-bold mt-6 mb-4">About Elite Global AI</h1>
-            <div className="space-y-4 px-16 justify-center">
+            <div className="space-y-4 px-0 lg:px-16 justify-center">
             <p >
             Elite Global AI empowers youth by demystifying artificial intelligence (AI) and fostering financial empowerment. Through workshops, mentorship, and resources, we make AI accessible, relatable, and beneficial for personal and professional growth.
             </p>
