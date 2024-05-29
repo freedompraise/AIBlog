@@ -1,60 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { getFooterHeight } from '../services/util';
 
 const Navbar = () => {
+  const [openNav, setOpenNav] = useState(false);
+
+  const toggleNav = () => {
+    setOpenNav(!openNav);
+  };
 
   const scrollToFooter = () => {
-    const footerHeight = getFooterHeight(); 
-    const scrollHeight = document.body.scrollHeight - footerHeight; 
+    const footerHeight = getFooterHeight();
+    const scrollHeight = document.body.scrollHeight - footerHeight;
     window.scrollTo({
       top: scrollHeight,
       behavior: 'smooth'
     });
-  };  
+  };
 
   const handleClick = () => {
     scrollToFooter();
   };
 
-  const navList = () => {
-    return (
-      <>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-          ( isActive ? "text-blue-900" : "text-white"
-    )}
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            ( isActive ? "text-blue-900" : "text-white"
-    )}
-        >
-          Contact
-        </NavLink>
-        <NavLink
-          to="/articles"
-          className={({ isActive }) =>
-            ( isActive ? "text-blue-900" : "text-white"
-    )}
-        >
-         Articles
-        </NavLink>
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            ( isActive ? "text-blue-900" : "text-white"
-    )}
-        >
-          About
-        </NavLink>
-      </>
-    );
-  };
+  const navList = () => (
+    <>
+      <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? "text-blue-900" : "text-white")}
+      >
+        Home
+      </NavLink>
+      <NavLink
+        to="/contact"
+        className={({ isActive }) => (isActive ? "text-blue-900" : "text-white")}
+      >
+        Contact
+      </NavLink>
+      <NavLink
+        to="/articles"
+        className={({ isActive }) => (isActive ? "text-blue-900" : "text-white")}
+      >
+        Articles
+      </NavLink>
+      <NavLink
+        to="/about"
+        className={({ isActive }) => (isActive ? "text-blue-900" : "text-white")}
+      >
+        About
+      </NavLink>
+    </>
+  );
 
   return (
     <header className="border-b-2 h-28 font-DM">
@@ -73,11 +70,23 @@ const Navbar = () => {
               SUBSCRIBE
             </button>
           </div>
+
+          <button
+            onClick={toggleNav}
+            className="md:hidden p-2 rounded hover:bg-gray-200 focus:outline-none focus:bg-gray-300 z-50"
+          >
+            <FontAwesomeIcon icon={openNav ? faTimes : faBars} />
+          </button>
         </div>
 
-        <nav className="md:hidden flex flex-col items-center">
-          {navList()}
-        </nav>
+        {openNav && (
+          <div className="fixed inset-0 z-40">
+            <div className="fixed inset-0 bg-black opacity-50" onClick={toggleNav}></div>
+            <nav className="fixed top-0 left-0 w-1/2 h-full bg-white flex flex-col items-start p-4 space-y-2 z-50">
+              {navList()}
+            </nav>
+          </div>
+        )}
 
         <hr className="border-b border-gray-300 mt-2 h-0" />
       </div>
