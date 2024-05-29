@@ -10,7 +10,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 function App() {
 
   return (
-    <div className="bg-white w-screen overflow-x-hidden flex flex-col text-black mx-auto ">
+    <div className="bg-white w-screen overflow-x-hidden px-6 lg:px-20  flex flex-col text-black mx-auto ">
     <SpeedInsights />
     <Analytics />
     <BrowserRouter>
