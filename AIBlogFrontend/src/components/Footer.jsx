@@ -1,6 +1,6 @@
 import { React, useRef }from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faXTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   const footerRef = useRef(null);
@@ -9,8 +9,8 @@ const Footer = () => {
   `.trim();
 
   return (
-    <footer ref={footerRef} id="footer" className="bg-gray-800 text-black bg-white py-2">
-      <div className="container mx-auto px-4 flex flex-col items-center">
+    <footer ref={footerRef} id="footer" className="text-black py-2">
+      <div className="container mx-auto flex flex-col items-center">
         <h2 className="text-2xl mt-6 mb-4 font-bold">About This Blog</h2>
         <p className="text-lg text-center">{paragraph}</p>
 
@@ -23,6 +23,9 @@ const Footer = () => {
           </a>
           <a href="https://www.instagram.com/eliteglobalai_?igsh=MWdpcm96Y202M3U3OQ==" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faInstagram} className="text-pink-700" size="2x" />
+          </a>
+          <a href="https://www.linkedin.com/company/elite-global-ai/" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faLinkedin} className="text-blue-700" size="2x" />
           </a>
         </div>
 

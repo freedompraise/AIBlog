@@ -12,7 +12,7 @@ const NavNewsletter = () => {
   };
 
   return (
-    <form id="newsletter" className="border border-opacity-25 rounded-lg border-black bg-white px-4 text-black overflow-auto" onSubmit={handleSubmit(onSubmit)}>
+    <form id="newsletter" className="mt-4 rounded-lg text-black overflow-auto" onSubmit={handleSubmit(onSubmit)}>
       <div className="container mx-auto flex flex-col text-center">
         <h2 className="text-xl font-bold my-4">Never Miss a Single Letter!</h2>
 
@@ -21,7 +21,7 @@ const NavNewsletter = () => {
             You've successfully subscribed!
           </p>
         ) : (
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col px-0 lg:px-36 w-full">
             <input
               {...register("email", { required: true })}
               type="email"

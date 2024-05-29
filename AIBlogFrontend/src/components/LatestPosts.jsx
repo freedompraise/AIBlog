@@ -25,7 +25,7 @@ const LatestPosts = () => {
 
 if (loading) {
   return (
-    <div className="flex px-4  flex-col space-y-4 items-center justify-center text-black sm:h-50 lg:h-100 items-center my-64">
+    <div className="flex flex-col space-y-4 items-center justify-center text-black sm:h-50 lg:h-100 items-center my-64">
       <FontAwesomeIcon className='fa-spin' icon={faSpinner} spin size="3x" />
       <p className="text-2xl font-mono">"The best things in life are worth waiting for." - <span className='text-blue-700 font-xs'>Abraham Lincoln</span></p>
     </div>
@@ -33,10 +33,10 @@ if (loading) {
 }
 
   return (
-    <section className="container my-8 mx-auto px-4">
+    <section className="container my-8 mx-auto">
       <div className="rectangle text-left text-white px-4 py-1 bg-black font-mono mt-4">LATEST POSTS</div>
         <>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {posts.map((post) => (
               <div key={post.slug} className="flex p-2 flex-col rounded-lg shadow-md">
                 <Link to={`/post/${post.slug}`}>
