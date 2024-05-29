@@ -4,12 +4,14 @@ import { Navbar, FootNewsletter, Footer } from "./components/index";
 import { Home, PostDetail, About, Articles, Contact } from "./pages/index";
 import "tailwindcss/tailwind.css"
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 
 function App() {
 
   return (
-    <div className="bg-white w-screen overflow-x-hidden flex flex-col text-black sm:max-w-screen-sm mx-auto ">
+    <div className="bg-white w-screen overflow-x-hidden flex flex-col text-black sm:max-w-screen-md mx-auto ">
+    <SpeedInsights />
     <Analytics />
     <BrowserRouter>
     <Navbar />
