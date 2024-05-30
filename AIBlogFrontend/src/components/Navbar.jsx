@@ -54,8 +54,8 @@ const Navbar = () => {
   );
 
   return (
-    <header className="border-b-2 h-28 font-DM">
-      <div className="container mx-auto py-4 px-4 md:px-1">
+    <header className="h-28 font-DM px-4 md:px-1">
+      <div className="container mx-auto py-4">
         <div className="flex items-center justify-between">
           <NavLink to="/" className="text-2xl font-bold text-blue-500">
             <img src="/logo.png" alt="Elite Global AI" className="h-10" />
