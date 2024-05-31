@@ -2,35 +2,33 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { supabase } from '../services/supabaseClient';
+import { fetchPosts } from '../services/api.js'
 
 const LatestPosts = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading ] = useState(true);
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const getPosts = async () => {
       try {
-        const { data } = await supabase.from('Post').select('*');
-        setPosts(data);
+        const data = await fetchPosts();
         setLoading(false);
+        setPosts(data)
       } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error("Error fetching posts", error);
       }
     };
+    getPosts ();
+    }, []);
 
-    fetchPosts();
-  }, []);
 
-
-if (loading) {
-  return (
-    <div className="flex flex-col space-y-4 items-center justify-center text-black sm:h-50 lg:h-100 items-center my-64">
-      <FontAwesomeIcon className='fa-spin' icon={faSpinner} spin size="3x" />
-      <p className="text-2xl font-mono">"The best things in life are worth waiting for." - <span className='text-blue-700 font-xs'>Abraham Lincoln</span></p>
-    </div>
-  );
-}
+  if (loading) {
+    return (
+      <>
+      <div className='h-200 my-200 bg-white'></div>
+      </>
+    );
+  }
 
   return (
     <section className="container my-8 mx-auto">
