@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabaseClient';
-import { FormattedText } from '../services/util';
-import { useHistory } from 'react-router-dom';
+import { FormattedText } from '../components';
 
 const PostDetail = ({ match: { params: { slug } } }) => {
-  const history = useHistory();
-
   const [post, setPost] = useState(null);
-  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
  
   
@@ -21,24 +17,20 @@ const PostDetail = ({ match: { params: { slug } } }) => {
           .single();
 
         if (error) {
-          setError(error.message);
+          console.log("error");
         } else {
           setPost(data);
         }
 
         setLoading(false);
       } catch (error) {
-        setError(error.message);
-        setLoading(false);
+        throw error
       }
     };
 
     fetchPost();
   }, [slug]);
 
-  if (error) {
-    {history.push('/')}
-  }
 
   if (loading) {
     return <div className="p-4 h-100 bg-white mt-4 text-center">Loading...</div>;
