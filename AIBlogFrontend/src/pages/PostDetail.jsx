@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabaseClient';
-import { FormattedText } from '../components';
+import { FormattedText } from '../services/util';
 import { useHistory } from 'react-router-dom';
 
 const PostDetail = ({ match: { params: { slug } } }) => {
