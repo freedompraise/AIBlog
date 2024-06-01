@@ -5,7 +5,9 @@ import { Home, PostDetail, About, Articles, Contact } from "./pages/index";
 import "tailwindcss/tailwind.css"
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import clearLocalStorage from "./services/cache";
 
+clearLocalStorage();
 
 function App() {
 

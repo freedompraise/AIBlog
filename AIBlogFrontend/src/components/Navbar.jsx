@@ -54,7 +54,7 @@ const Navbar = () => {
   );
 
   return (
-    <header className="h-28 font-DM px-4 md:px-1">
+    <header className="h-28 font-DM px-4 lg:px-8">
       <div className="container mx-auto py-4">
         <div className="flex items-center justify-between">
           <NavLink to="/" className="text-2xl font-bold text-blue-500">
