@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabaseClient';
 import { FormattedText } from '../components';
+import { Loader } from '../components';
 
 const PostDetail = ({ match: { params: { slug } } }) => {
   const [post, setPost] = useState(null);
@@ -33,7 +34,9 @@ const PostDetail = ({ match: { params: { slug } } }) => {
 
 
   if (loading) {
-    return <div className="p-4 h-100 bg-white mt-4 text-center">Loading...</div>;
+    return <>
+            <Loader />
+            </>;
   }
 
   return (
