@@ -4,9 +4,9 @@ const Contact = () => {
   document.title = `Contact - Elite AI Blog`;
 
   return (
-    <div className="container mx-auto px-4 bg-white text-black text-center overflow-auto mb-2">
+    <div className="container mx-auto px-2 lg:px-60 bg-white text-black text-center overflow-auto mb-2">
       <h1 className="text-3xl font-bold text-center mt-6 mb-4">Contact Us</h1>
-      <img className="w-full p-8" src="/contact.jpeg" alt="Contact Us" />
+      <img className="w-full" src="/contact.jpeg" alt="Contact Us" />
 
       <div
         id="form"
