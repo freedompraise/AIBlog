@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Switch} from "react-router-dom";
 import { Navbar, FootNewsletter, Footer } from "./components/index";
 import { Home, PostDetail, About, Articles, Contact, Login } from "./pages/index";
 import "tailwindcss/tailwind.css"
@@ -15,7 +15,6 @@ function App() {
     <div className="bg-white w-screen overflow-x-hidden flex flex-col text-black mx-auto">
     <SpeedInsights />
     <Analytics />
-    <BrowserRouter>
     <Navbar />
     <div className="px-6 lg:px-20">
     <Switch> 
@@ -29,7 +28,6 @@ function App() {
     <FootNewsletter />
     </div>
     <Footer />
-    </BrowserRouter>
     </div>
   )
 }
