@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["system-ui", "ui-sans-serif"],
-        serif: ["Georgia", "ui-serif"],
-        mono: ["Menlo", "ui-monospace"],
+        sans: ["Inter", "ui-sans-serif"],
+        serif: ["Merriweather", "ui-serif"],
+        mono: ["Monaco", "ui-monospace"],
       },
     },
   },
