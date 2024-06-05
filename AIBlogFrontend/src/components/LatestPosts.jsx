@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Loader } from './index.js'
 import { fetchPosts } from '../services/api.js'
 
 const LatestPosts = () => {
@@ -25,7 +24,7 @@ const LatestPosts = () => {
   if (loading) {
     return (
       <>
-      <div className='h-200 my-200 bg-white'></div>
+      <Loader />
       </>
     );
   }

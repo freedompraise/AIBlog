@@ -66,7 +66,7 @@ const Navbar = () => {
           </nav>
 
           <div className="flex justify-end ml-10">
-            <button onClick={handleClick} className="font-sans rounded-sm text-white p-1 bg-blue-700 text-xs mr-4">
+            <button onClick={handleClick} className="font-sans rounded-sm text-white p-1 lg:p-2 bg-blue-700 text-xs mr-4">
               SUBSCRIBE
             </button>
           </div>
