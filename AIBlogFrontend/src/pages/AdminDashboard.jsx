@@ -5,6 +5,10 @@ import { faImage } from "@fortawesome/free-solid-svg-icons";
 import { categories } from "../services/util";
 
 const AdminDashboard = () => {
+  if (localStorage.getItem("token") != import.meta.env.VITE_CUSTOM_TOKEN){
+    window.location.href = "/login";
+  }
+
   const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState({
     title: "",
