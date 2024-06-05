@@ -147,7 +147,7 @@ const AdminDashboard = () => {
                 <h3 className="text-xl font-bold">{post.title}</h3>
                 <p>{post.snippet}</p>
                 <div className="flex justify-between items-center">
-                  <p className="text-gray-500">Author: {post.author}</p>
+                  {/* <p className="text-gray-500">Author: {post.author}</p> */}
                   <div className="flex space-x-2">
                     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                       Edit
