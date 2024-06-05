@@ -28,25 +28,25 @@ const Navbar = () => {
     <>
       <NavLink
         to="/"
-        className={({ isActive }) => (isActive ? "text-blue-900" : "text-white")}
+        className={({ isActive }) => (isActive ? "text-blue-900" : "text-black")}
       >
         Home
       </NavLink>
       <NavLink
         to="/contact"
-        className={({ isActive }) => (isActive ? "text-blue-900" : "text-white")}
+        className={({ isActive }) => (isActive ? "text-blue-900" : "text-black")}
       >
         Contact
       </NavLink>
       <NavLink
         to="/articles"
-        className={({ isActive }) => (isActive ? "text-blue-900" : "text-white")}
+        className={({ isActive }) => (isActive ? "text-blue-900" : "text-black")}
       >
         Articles
       </NavLink>
       <NavLink
         to="/about"
-        className={({ isActive }) => (isActive ? "text-blue-900" : "text-white")}
+        className={({ isActive }) => (isActive ? "text-blue-900" : "text-black")}
       >
         About
       </NavLink>
@@ -54,7 +54,7 @@ const Navbar = () => {
   );
 
   return (
-    <header className="h-28 font-DM px-4 lg:px-8">
+    <header className="h-28 px-4 lg:px-8">
       <div className="container mx-auto py-4">
         <div className="flex items-center justify-between">
           <NavLink to="/" className="text-2xl font-bold text-blue-500">
