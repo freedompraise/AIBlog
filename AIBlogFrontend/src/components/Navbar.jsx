@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { getFooterHeight } from '../services/util';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { getFooterHeight } from "../services/util";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -16,7 +16,7 @@ const Navbar = () => {
     const scrollHeight = document.body.scrollHeight - footerHeight;
     window.scrollTo({
       top: scrollHeight,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -28,25 +28,29 @@ const Navbar = () => {
     <>
       <NavLink
         to="/"
-        className={({ isActive }) => (isActive ? "text-blue-900" : "text-black")}
+        activeClassName="text-blue-500 font-bold"
+        className="text-black"
       >
         Home
       </NavLink>
       <NavLink
         to="/contact"
-        className={({ isActive }) => (isActive ? "text-blue-900" : "text-black")}
+        activeClassName="text-blue-500 font-bold"
+        className="text-black"
       >
         Contact
       </NavLink>
       <NavLink
         to="/articles"
-        className={({ isActive }) => (isActive ? "text-blue-900" : "text-black")}
+        activeClassName="text-blue-500 font-bold"
+        className="text-black"
       >
         Articles
       </NavLink>
       <NavLink
         to="/about"
-        className={({ isActive }) => (isActive ? "text-blue-900" : "text-black")}
+        activeClassName="text-blue-500 font-bold"
+        className="text-black"
       >
         About
       </NavLink>
@@ -61,12 +65,13 @@ const Navbar = () => {
             <img src="/logo.png" alt="Elite Global AI" className="h-10" />
           </NavLink>
 
-          <nav className="hidden md:flex h-58 space-x-4">
-            {navList()}
-          </nav>
+          <nav className="hidden md:flex h-58 space-x-4">{navList()}</nav>
 
           <div className="flex justify-end ml-10">
-            <button onClick={handleClick} className="font-sans rounded-sm text-white p-1 lg:p-2 bg-blue-700 text-xs mr-4">
+            <button
+              onClick={handleClick}
+              className="font-sans rounded-sm text-white p-1 lg:p-2 bg-blue-700 text-xs mr-4"
+            >
               SUBSCRIBE
             </button>
           </div>
@@ -81,7 +86,10 @@ const Navbar = () => {
 
         {openNav && (
           <div className="fixed inset-0 z-40">
-            <div className="fixed inset-0 bg-black opacity-50" onClick={toggleNav}></div>
+            <div
+              className="fixed inset-0 bg-black opacity-50"
+              onClick={toggleNav}
+            ></div>
             <nav className="fixed top-0 left-0 w-1/2 h-full bg-white flex flex-col items-start p-4 space-y-2 z-50">
               {navList()}
             </nav>
