@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch} from "react-router-dom";
 import { Navbar, FootNewsletter, Footer } from "./components/index";
-import { Home, PostDetail, About, Articles, Contact, Login } from "./pages/index";
+import { Home, PostDetail, About, Articles, Contact, AdminDashboard } from "./pages/index";
 import "tailwindcss/tailwind.css"
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -23,7 +23,8 @@ function App() {
       <Route path="/about" component={About} />
       <Route path="/articles" component={Articles} />
       <Route path="/contact" component={Contact} />
-      <Route path="/login" component={Login} />
+      <Route path="/admin" component={AdminDashboard} />
+      {/* <Route path="/login" component={Login} /> */}
     </Switch>
     <FootNewsletter />
     </div>
