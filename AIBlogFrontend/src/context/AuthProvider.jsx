@@ -1,34 +1,37 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { supabase } from "../services/supabaseClient";
+import { deleteCookie, hasCookie, setCookie } from 'cookies-next'
+import { createContext, useContext, useState } from 'react'
 
-const AuthContext = createContext({});
 
-export const useAuth = () => useContext(AuthContext);
+const AuthContext = createContext(undefined)
+export function useAuthContext() {
+	const context = useContext(AuthContext)
+	if (context === undefined) {
+		throw new Error('useAuthContext must be used within an AuthProvider')
+	}
+	return context
+}
 
-const login = (email, password) =>
-  supabase.auth.signInWithPassword({ email, password });
-
-const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [auth, setAuth] = useState(false);
-
-  useEffect(() => {
-    const { data } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === "SIGNED_IN") {
-        setUser(session.user);
-        setAuth(true);
-      }
-    });
-    return () => {
-      data.subscription.unsubscribe();
-    };
-  }, []);
-
-  return (
-    <AuthContext.Provider value={{ user, login }}>
-      {children}
-    </AuthContext.Provider>
-  );
-};
-
-export default AuthProvider;
+const authSessionKey = '_ELITE_ADMIN_AUTH_'
+export function AuthProvider({ children }) {
+	const [user, setUser] = useState(undefined)
+	const saveSession = (user) => {
+		setCookie(authSessionKey, JSON.stringify(user))
+		setUser(user)
+	}
+	const removeSession = () => {
+		deleteCookie(authSessionKey)
+		setUser(undefined)
+	}
+	return (
+		<AuthContext.Provider
+			value={{
+				user,
+				isAuthenticated: hasCookie(authSessionKey),
+				saveSession,
+				removeSession,
+			}}
+		>
+			{children}
+		</AuthContext.Provider>
+	)
+}
