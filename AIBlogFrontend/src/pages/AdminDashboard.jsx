@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { supabase } from "../services/supabaseClient";
 // import { uploadImage } from '../services/util';
 import { faImage } from "@fortawesome/free-solid-svg-icons";
+import { categories } from "../services/util";
 
 const AdminDashboard = () => {
   const [posts, setPosts] = useState([]);
@@ -30,15 +31,7 @@ const AdminDashboard = () => {
   //   };
 
   const handleCategoryChange = (e) => {
-    const category = e.target.value;
-    if (e.target.checked) {
-      setNewPost({ ...newPost, category: [...newPost.category, category] });
-    } else {
-      setNewPost({
-        ...newPost,
-        category: newPost.category.filter((cat) => cat !== category),
-      });
-    }
+    setNewPost({ ...newPost, category: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -116,48 +109,18 @@ const AdminDashboard = () => {
             <div>
               <label className="block font-bold mb-2">Category</label>
               <div className="flex flex-wrap gap-2">
-                <label className="flex items-center">
-                  <input
-                    type="radio"
-                    value="Understanding Concepts in AI"
-                    checked={
-                      newPost.category === "Understanding Concepts in AI"
-                    }
-                    onChange={handleCategoryChange}
-                    className="mr-2"
-                  />
-                  Understanding Concepts in AI
-                </label>
-                <label className="flex items-center">
-                  <input
-                    type="radio"
-                    value="AI in education"
-                    checked={newPost.category === "AI in education"}
-                    onChange={handleCategoryChange}
-                    className="mr-2"
-                  />
-                  AI in education
-                </label>
-                <label className="flex items-center">
-                  <input
-                    type="radio"
-                    value="AI in News/Trends"
-                    checked={newPost.category === "AI in News/Trends"}
-                    onChange={handleCategoryChange}
-                    className="mr-2"
-                  />
-                  AI in News/Trends
-                </label>
-                <label className="flex items-center">
-                  <input
-                    type="radio"
-                    value="Safety and Ethics of AI"
-                    checked={newPost.category === "Safety and Ethics of AI"}
-                    onChange={handleCategoryChange}
-                    className="mr-2"
-                  />
-                  Safety and Ethics of AI
-                </label>
+                {categories.map((category) => (
+                  <label className="flex items-center" key={category.value}>
+                    <input
+                      type="radio"
+                      value={category.value}
+                      checked={newPost.category === category.value}
+                      onChange={handleCategoryChange}
+                      className="mr-2"
+                    />
+                    {category.name}
+                  </label>
+                ))}
               </div>
             </div>
 
