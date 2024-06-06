@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../../../services/supabaseClient";
 import { PostForm } from "../components/PostForm";
+import { categories } from "../data";
 
 export const EditPost = ({ setEditPostSlug, slug }) => {
   const [post, setPost] = useState(null);
@@ -37,7 +38,8 @@ export const EditPost = ({ setEditPostSlug, slug }) => {
         title={post.title}
         snippet={post.snippet}
         content={post.content}
-        categories={post.category}
+        category={post.category}
+        categories={categories} // TD highlight the active category
         onChange={(newPost) => setPost(newPost)}
         onSubmit={handleSaveChanges}
       />
