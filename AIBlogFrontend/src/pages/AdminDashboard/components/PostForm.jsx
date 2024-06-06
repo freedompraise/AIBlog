@@ -9,6 +9,10 @@ export const PostForm = ({
   onChange,
   onSubmit,
 }) => {
+  const handleCategoryChange = (e) => {
+    onChange({ category: e.target.value });
+  };
+
   return (
     <form onSubmit={onSubmit} className="space-y-4">
       <div>
@@ -21,7 +25,7 @@ export const PostForm = ({
           value={title}
           onChange={(e) => onChange({ title: e.target.value })}
           placeholder="Enter title"
-          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
       </div>
       <div>
@@ -33,7 +37,7 @@ export const PostForm = ({
           value={snippet}
           onChange={(e) => onChange({ snippet: e.target.value })}
           placeholder="Enter snippet"
-          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
         ></textarea>
       </div>
       <div>
@@ -45,7 +49,7 @@ export const PostForm = ({
           value={content}
           onChange={(e) => onChange({ content: e.target.value })}
           placeholder="Enter content"
-          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-64"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 h-64"
         ></textarea>
       </div>
       <div>
@@ -57,7 +61,7 @@ export const PostForm = ({
                 type="radio"
                 value={category.value}
                 checked={title === category.value}
-                onChange={(e) => onChange({ category: e.target.value })}
+                onChange={handleCategoryChange}
                 className="mr-2"
               />
               {category.name}
@@ -68,7 +72,7 @@ export const PostForm = ({
 
       <button
         type="submit"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
       >
         <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
         Submit
