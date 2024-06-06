@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../../services/supabaseClient";
 
-export const ListPosts = () => {
+export const ListPosts = ({ setEditPostSlug }) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -20,14 +20,17 @@ export const ListPosts = () => {
       <div className="space-y-4">
         {posts.map((post) => (
           <div
-            key={post.id}
+            key={post.slug}
             className="bg-white shadow-md rounded-md p-4 space-y-2"
           >
             <h3 className="text-xl font-bold">{post.title}</h3>
             <p>{post.snippet}</p>
             <div className="flex justify-between items-center">
               <div className="flex space-x-2">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <button
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  onClick={() => setEditPostSlug(post.slug)}
+                >
                   Edit
                 </button>
                 <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
