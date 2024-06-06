@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+
 export const PostForm = ({
   title,
   snippet,
@@ -17,6 +20,7 @@ export const PostForm = ({
           id="title"
           value={title}
           onChange={(e) => onChange({ title: e.target.value })}
+          placeholder="Enter title"
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
@@ -28,6 +32,7 @@ export const PostForm = ({
           id="snippet"
           value={snippet}
           onChange={(e) => onChange({ snippet: e.target.value })}
+          placeholder="Enter snippet"
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         ></textarea>
       </div>
@@ -39,7 +44,8 @@ export const PostForm = ({
           id="content"
           value={content}
           onChange={(e) => onChange({ content: e.target.value })}
-          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter content"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-64"
         ></textarea>
       </div>
       <div>
@@ -64,6 +70,7 @@ export const PostForm = ({
         type="submit"
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       >
+        <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
         Submit
       </button>
     </form>
