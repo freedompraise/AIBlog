@@ -2,6 +2,7 @@ import { useState } from "react";
 import { categories } from "../data";
 import { supabase } from "../../../services/supabaseClient";
 import { PostForm } from "../components/PostForm";
+import { createSlug } from "./util";
 
 export const CreatePost = () => {
   const [newPost, setNewPost] = useState({
@@ -12,12 +13,10 @@ export const CreatePost = () => {
     category: [],
   });
 
-  const handleCategoryChange = (e) => {
-    setNewPost({ ...newPost, category: e.target.value });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const slug = createSlug(newPost.title);
+    newPost.slug = slug;
     const { error } = await supabase.from("Post").insert(newPost);
     if (!error) {
       setNewPost({
@@ -27,6 +26,7 @@ export const CreatePost = () => {
         // image: '',
         category: [],
       });
+      alert("Post sent successfully!");
     }
   };
 
