@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { supabase } from "../../services/supabaseClient";
-import { categories } from "../../services/util";
+import { useState } from "react";
+import { categories } from "../data";
+import { supabase } from "../../../services/supabaseClient";
 
-const CreatePost = () => {
+export const CreatePost = () => {
   const [newPost, setNewPost] = useState({
     title: "",
     snippet: "",
@@ -39,9 +39,7 @@ const CreatePost = () => {
           type="text"
           id="title"
           value={newPost.title}
-          onChange={(e) =>
-            setNewPost({ ...newPost, title: e.target.value })
-          }
+          onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
@@ -52,9 +50,7 @@ const CreatePost = () => {
         <textarea
           id="snippet"
           value={newPost.snippet}
-          onChange={(e) =>
-            setNewPost({ ...newPost, snippet: e.target.value })
-          }
+          onChange={(e) => setNewPost({ ...newPost, snippet: e.target.value })}
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         ></textarea>
       </div>
@@ -65,9 +61,7 @@ const CreatePost = () => {
         <textarea
           id="content"
           value={newPost.content}
-          onChange={(e) =>
-            setNewPost({ ...newPost, content: e.target.value })
-          }
+          onChange={(e) => setNewPost({ ...newPost, content: e.target.value })}
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         ></textarea>
       </div>
@@ -109,5 +103,3 @@ const CreatePost = () => {
     </form>
   );
 };
-
-export default CreatePost;
