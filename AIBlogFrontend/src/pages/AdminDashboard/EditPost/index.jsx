@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../../../services/supabaseClient";
 
-export const EditPost = ({ slug, setEditPostSlug }) => {
+export const EditPost = ({ setEditPostSlug, slug }) => {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
@@ -16,6 +16,17 @@ export const EditPost = ({ slug, setEditPostSlug }) => {
     };
     fetchPost();
   }, [slug]);
+
+  const handleSaveChanges = async () => {
+    // Update the post in Supabase
+    const { error } = await supabase
+      .from("Post")
+      .update({ title: post.title, snippet: post.snippet })
+      .eq("slug", slug);
+    if (!error) {
+      setEditPostSlug(null); // Reset the editPostSlug state
+    }
+  };
 
   if (!post) return null;
 
@@ -38,8 +49,8 @@ export const EditPost = ({ slug, setEditPostSlug }) => {
         />
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          type="submit"
-          onClick={setEditPostSlug(null)}
+          type="button"
+          onClick={handleSaveChanges}
         >
           Save Changes
         </button>
