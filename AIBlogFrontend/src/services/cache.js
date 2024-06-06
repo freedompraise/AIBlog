@@ -4,9 +4,7 @@ const clearLocalStorage = () => {
   const timeDifference = (now - timestamp) / 60000;
   if (timeDifference > 120) {
     // set cache time to 2 hours
-    const token = localStorage.getItem("token");
-    localStorage.clear();
-    localStorage.setItem("token", token);
+    localStorage.removeItem("posts");
   }
 };
 
