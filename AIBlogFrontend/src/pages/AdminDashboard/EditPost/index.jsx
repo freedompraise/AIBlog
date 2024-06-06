@@ -32,7 +32,7 @@ export const EditPost = ({ setEditPostSlug, slug }) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Edit Post</h2>
+      <h2 className="text-2xl font-bold mt-4">Edit Post</h2>
       <form>
         <label className="block font-bold mb-2">Title</label>
         <input
@@ -45,6 +45,12 @@ export const EditPost = ({ setEditPostSlug, slug }) => {
         <textarea
           value={post.snippet}
           onChange={(e) => setPost({ ...post, snippet: e.target.value })}
+          className="block w-full p-2 pl-10 text-gray-700 rounded"
+        />
+        <label className="block font-bold mb-2">Content</label>
+        <textarea
+          value={post.content}
+          onChange={(e) => setPost({ ...post, content: e.target.value })}
           className="block w-full p-2 pl-10 text-gray-700 rounded"
         />
         <button
