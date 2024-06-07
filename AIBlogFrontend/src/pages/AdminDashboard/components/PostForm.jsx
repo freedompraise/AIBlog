@@ -1,16 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { categories } from "../data";
+import { useState } from "react";
 
-export const PostForm = ({
-  title,
-  snippet,
-  content,
-  categories,
-  onChange,
-  onSubmit,
-}) => {
+export const PostForm = ({ postData, setPostData, onSubmit }) => {
+  const [internalData, setInternalData] = useState(postData);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInternalData((prevData) => ({ ...prevData, [name]: value }));
+    console.log("internalData:", internalData); // Added log
+  };
+
   const handleCategoryChange = (e) => {
-    onChange({ category: e.target.value });
+    const { value } = e.target;
+    setInternalData((prevData) => ({ ...prevData, category: value }));
   };
 
   return (
@@ -22,8 +26,8 @@ export const PostForm = ({
         <input
           type="text"
           id="title"
-          value={title}
-          onChange={(e) => onChange({ title: e.target.value })}
+          value={postData.title}
+          onChange={handleChange}
           placeholder="Enter title"
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
@@ -34,8 +38,8 @@ export const PostForm = ({
         </label>
         <textarea
           id="snippet"
-          value={snippet}
-          onChange={(e) => onChange({ snippet: e.target.value })}
+          value={postData.title} // This should be postData.snippet
+          onChange={handleChange}
           placeholder="Enter snippet"
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
         ></textarea>
@@ -46,10 +50,10 @@ export const PostForm = ({
         </label>
         <textarea
           id="content"
-          value={content}
-          onChange={(e) => onChange({ content: e.target.value })}
+          value={postData.content}
+          onChange={handleChange}
           placeholder="Enter content"
-          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 h-64"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 h-80"
         ></textarea>
       </div>
       <div>
@@ -60,7 +64,7 @@ export const PostForm = ({
               <input
                 type="radio"
                 value={category.value}
-                checked={title === category.value}
+                checked={postData.category === category.value}
                 onChange={handleCategoryChange}
                 className="mr-2"
               />
@@ -72,10 +76,10 @@ export const PostForm = ({
 
       <button
         type="submit"
-        className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-md flex items-center gap-2"
       >
-        <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
-        Submit
+        <FontAwesomeIcon icon={faPaperPlane} />
+        Send
       </button>
     </form>
   );
