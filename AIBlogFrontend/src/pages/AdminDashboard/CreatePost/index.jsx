@@ -15,7 +15,6 @@ export const CreatePost = () => {
     e.preventDefault();
     const slug = createSlug(postData.title);
     const updatedPostData = { ...postData, slug };
-    console.log("postData before Supabase:", postData);
     const { error } = await supabase.from("Post").insert(updatedPostData);
     if (!error) {
       setPostData({
