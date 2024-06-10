@@ -10,7 +10,7 @@ import socialMediaDirector from "../assets/team/sm-director.jpg";
 
 function TeamMemberCard({ name, position, photo }) {
   return (
-    <div className="flex flex-row items-center justify-center mb-8">
+    <div className="flex flex-row items-center justify-center my-8">
       <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
         <img
           src={photo}
