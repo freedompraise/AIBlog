@@ -19,8 +19,8 @@ function TeamMemberCard({ name, position, photo }) {
         />
       </div>
       <div className="flex flex-col justify-center">
-        <h2 className="text-xl font-bold">{name}</h2>
-        <p className="text-lg">{position}</p>
+        <h2 className="text-lg font-bold">{name}</h2>
+        <p className="text-xs">{position}</p>
       </div>
     </div>
   );
