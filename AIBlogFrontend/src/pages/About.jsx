@@ -10,7 +10,7 @@ import socialMediaDirector from "../assets/team/sm-director.jpg";
 
 function TeamMemberCard({ name, position, photo }) {
   return (
-    <div className="flex flex-row items-center justify-center my-8">
+    <div className="flex flex-row mx-0 lg:mx-4 items-center justify-center my-8">
       <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
         <img
           src={photo}
@@ -31,8 +31,8 @@ const About = () => {
 
   return (
     <div className="container mx-auto px-2 lg:px-40 bg-white overflow-auto mb-4 text-black">
-      <h1 className="text-3xl font-bold mt-6 mb-4">About Elite Global AI</h1>
       <div className="space-y-4 px-0 lg:px-16 justify-center">
+        <h1 className="text-3xl font-bold mt-6 mb-4">About Elite Global AI</h1>
         <p>
           Elite Global AI empowers youth by demystifying artificial intelligence
           (AI) and fostering financial empowerment. Through workshops,
