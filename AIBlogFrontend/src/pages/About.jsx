@@ -7,6 +7,7 @@ import leadInstructor from "../assets/team/lead-instructor.jpg";
 import leadITsupport from "../assets/team/lead-it-support.jpg";
 import marketingDirector from "../assets/team/marketing-director.jpg";
 import socialMediaDirector from "../assets/team/sm-director.jpg";
+import ceo from "../assets/team/ceo.jpg";
 
 function TeamMemberCard({ name, position, photo }) {
   return (
@@ -61,9 +62,9 @@ const About = () => {
         </p>
         <div className="flex flex-wrap mt-8">
           <TeamMemberCard
-            name="Ukamaka Ugbor"
-            position="Admin Support"
-            photo={adminSupport}
+            name="Vwakpor Efuetanu"
+            position="Chief Executive Officer"
+            photo={ceo}
           />
           <TeamMemberCard
             name="Emmanuel Agida"
@@ -99,6 +100,11 @@ const About = () => {
             name="Anuoluwakpo Ilesanmi"
             position="Social Media Director"
             photo={socialMediaDirector}
+          />
+          <TeamMemberCard
+            name="Ukamaka Ugbor"
+            position="Admin Support"
+            photo={adminSupport}
           />
         </div>
       </section>
