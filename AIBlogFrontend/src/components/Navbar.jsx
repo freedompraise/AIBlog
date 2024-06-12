@@ -25,18 +25,15 @@ const Navbar = () => {
           >
             <FontAwesomeIcon icon={openNav ? faTimes : faBars} />
           </button>
+          <button
+            onClick={handleClick}
+            className="font-sans rounded-sm text-white p-1 lg:p-2 bg-blue-700 text-xs mr-4"
+          >
+            SUBSCRIBE
+          </button>
           <nav className="hidden md:flex justify-center flex-1">
             {navList()}
           </nav>
-          <div className="flex justify-end ml-10">
-            <button
-              onClick={handleClick}
-              className="font-sans rounded-sm text-white p-1 lg:p-2 bg-blue-700 text-xs mr-4"
-            >
-              SUBSCRIBE
-            </button>
-          </div>
-
           <NavLink to="/" className="text-2xl font-bold text-blue-500">
             <img src="/logo.png" alt="Elite Global AI" className="h-10" />
           </NavLink>
