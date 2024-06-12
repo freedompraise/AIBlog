@@ -1,50 +1,19 @@
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { getFooterHeight } from "../services/util";
+import { navList, mobileNavList } from "./util";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
-  const location = useLocation();
 
   const toggleNav = () => {
     setOpenNav(!openNav);
   };
 
-  const scrollToFooter = () => {
-    const footerHeight = getFooterHeight();
-    const scrollHeight = document.body.scrollHeight - footerHeight;
-    window.scrollTo({
-      top: scrollHeight,
-      behavior: "smooth",
-    });
-  };
-
   const handleClick = () => {
     scrollToFooter();
   };
-
-  const navList = () => (
-    <div className="mt-16 flex flex-col space-y-4">
-      {[
-        { to: "/", name: "Home" },
-        { to: "/contact", name: "Contact" },
-        { to: "/articles", name: "Articles" },
-        { to: "/about", name: "About" },
-      ].map((navItem, index) => (
-        <NavLink
-          key={index}
-          to={navItem.to}
-          activeClassName="text-blue-500 font-bold"
-          className="text-black"
-          onClick={() => setOpenNav(false)}
-        >
-          {navItem.name}
-        </NavLink>
-      ))}
-    </div>
-  );
 
   return (
     <header className="h-28 px-4 lg:px-8">
@@ -56,8 +25,9 @@ const Navbar = () => {
           >
             <FontAwesomeIcon icon={openNav ? faTimes : faBars} />
           </button>
-          <nav className="hidden md:flex h-58 space-x-4">{navList()}</nav>
-
+          <nav className="hidden md:flex justify-center flex-1">
+            {navList()}
+          </nav>
           <div className="flex justify-end ml-10">
             <button
               onClick={handleClick}
@@ -79,7 +49,7 @@ const Navbar = () => {
               onClick={toggleNav}
             ></div>
             <nav className="fixed top-0 left-0 w-1/2 h-full bg-white flex flex-col items-start p-4 space-y-2 z-50">
-              {navList()}
+              {mobileNavList()}
             </nav>
           </div>
         )}
