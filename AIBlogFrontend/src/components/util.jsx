@@ -1,46 +1,60 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
-export const navList = () => (
-  <div className="flex space-x-4">
-    {[
-      { to: "/", name: "Home" },
-      { to: "/contact", name: "Contact" },
-      { to: "/articles", name: "Articles" },
-      { to: "/about", name: "About" },
-    ].map((navItem, index) => (
-      <div key={index}>
-        <NavLink
-          to={navItem.to}
-          activeClassName="text-blue-500 font-bold"
-          className="text-black"
-        >
-          {navItem.name}
-        </NavLink>
-      </div>
-    ))}
-  </div>
-);
+export const navList = () => {
+  const location = useLocation();
 
-export const mobileNavList = () => (
-  <div className="mt-16 flex flex-col space-y-4">
-    {[
-      { to: "/", name: "Home" },
-      { to: "/contact", name: "Contact" },
-      { to: "/articles", name: "Articles" },
-      { to: "/about", name: "About" },
-    ].map((navItem, index) => (
-      <div key={index}>
+  return (
+    <div className="flex space-x-4">
+      {[
+        { to: "/", name: "Home" },
+        { to: "/contact", name: "Contact" },
+        { to: "/articles", name: "Articles" },
+        { to: "/about", name: "About" },
+      ].map((item) => (
         <NavLink
-          to={navItem.to}
-          activeClassName="text-blue-500 font-bold"
-          className="text-black"
+          key={item.to}
+          to={item.to}
+          className={`${
+            location.pathname === item.to ||
+            location.pathname.startsWith(item.to + "/")
+              ? "text-blue-500"
+              : "text-black"
+          }`}
         >
-          {navItem.name}
+          {item.name}
         </NavLink>
-      </div>
-    ))}
-  </div>
-);
+      ))}
+    </div>
+  );
+};
+
+export const mobileNavList = () => {
+  const location = useLocation();
+
+  return (
+    <div className="mt-16 flex flex-col space-y-4">
+      {[
+        { to: "/", name: "Home" },
+        { to: "/contact", name: "Contact" },
+        { to: "/articles", name: "Articles" },
+        { to: "/about", name: "About" },
+      ].map((item) => (
+        <NavLink
+          key={item.to}
+          to={item.to}
+          className={`${
+            location.pathname === item.to ||
+            location.pathname.startsWith(item.to + "/")
+              ? "text-blue-500 font-bold"
+              : "text-black"
+          }`}
+        >
+          {item.name}
+        </NavLink>
+      ))}
+    </div>
+  );
+};
 
 const getFooterHeight = () => {
   const footerElement = document.getElementById("footer");
