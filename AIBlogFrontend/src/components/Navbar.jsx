@@ -11,7 +11,7 @@ const Navbar = () => {
     setOpenNav(!openNav);
   };
 
-  const handleClick = () => {
+  const handleSubscribe = () => {
     scrollToFooter();
   };
 
@@ -33,7 +33,7 @@ const Navbar = () => {
             {navList()}
           </nav>
           <button
-            onClick={handleClick}
+            onClick={handleSubscribe}
             className="font-sans rounded-sm text-white p-1 lg:p-2 bg-blue-700 text-xs mr-4"
           >
             SUBSCRIBE
