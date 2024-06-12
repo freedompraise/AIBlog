@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { getFooterHeight } from "../services/util";
+import { navList, mobileNavList } from "./util";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -11,76 +11,32 @@ const Navbar = () => {
     setOpenNav(!openNav);
   };
 
-  const scrollToFooter = () => {
-    const footerHeight = getFooterHeight();
-    const scrollHeight = document.body.scrollHeight - footerHeight;
-    window.scrollTo({
-      top: scrollHeight,
-      behavior: "smooth",
-    });
-  };
-
-  const handleClick = () => {
+  const handleSubscribe = () => {
     scrollToFooter();
   };
-
-  const navList = () => (
-    <>
-      <NavLink
-        to="/"
-        activeClassName="text-blue-500 font-bold"
-        className="text-black"
-      >
-        Home
-      </NavLink>
-      <NavLink
-        to="/contact"
-        activeClassName="text-blue-500 font-bold"
-        className="text-black"
-      >
-        Contact
-      </NavLink>
-      <NavLink
-        to="/articles"
-        activeClassName="text-blue-500 font-bold"
-        className="text-black"
-      >
-        Articles
-      </NavLink>
-      <NavLink
-        to="/about"
-        activeClassName="text-blue-500 font-bold"
-        className="text-black"
-      >
-        About
-      </NavLink>
-    </>
-  );
 
   return (
     <header className="h-28 px-4 lg:px-8">
       <div className="container mx-auto py-4">
         <div className="flex items-center justify-between">
-          <NavLink to="/" className="text-2xl font-bold text-blue-500">
-            <img src="/logo.png" alt="Elite Global AI" className="h-10" />
-          </NavLink>
-
-          <nav className="hidden md:flex h-58 space-x-4">{navList()}</nav>
-
-          <div className="flex justify-end ml-10">
-            <button
-              onClick={handleClick}
-              className="font-sans rounded-sm text-white p-1 lg:p-2 bg-blue-700 text-xs mr-4"
-            >
-              SUBSCRIBE
-            </button>
-          </div>
-
           <button
             onClick={toggleNav}
             className="md:hidden p-2 rounded hover:bg-gray-200 focus:outline-none focus:bg-gray-300 z-50"
           >
             <FontAwesomeIcon icon={openNav ? faTimes : faBars} />
+          </button>
+
+          <NavLink to="/" className="text-2xl font-bold text-blue-500">
+            <img src="/logo.png" alt="Elite Global AI" className="h-10" />
+          </NavLink>
+          <nav className="hidden md:flex justify-center flex-1">
+            {navList()}
+          </nav>
+          <button
+            onClick={handleSubscribe}
+            className="font-sans rounded-sm text-white p-1 lg:p-2 bg-blue-700 text-xs mr-4"
+          >
+            SUBSCRIBE
           </button>
         </div>
 
@@ -91,7 +47,7 @@ const Navbar = () => {
               onClick={toggleNav}
             ></div>
             <nav className="fixed top-0 left-0 w-1/2 h-full bg-white flex flex-col items-start p-4 space-y-2 z-50">
-              {navList()}
+              {mobileNavList()}
             </nav>
           </div>
         )}
