@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { getFooterHeight } from "../services/util";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
+  const location = useLocation();
 
   const toggleNav = () => {
     setOpenNav(!openNav);
@@ -25,46 +26,36 @@ const Navbar = () => {
   };
 
   const navList = () => (
-    <>
-      <NavLink
-        to="/"
-        activeClassName="text-blue-500 font-bold"
-        className="text-black"
-      >
-        Home
-      </NavLink>
-      <NavLink
-        to="/contact"
-        activeClassName="text-blue-500 font-bold"
-        className="text-black"
-      >
-        Contact
-      </NavLink>
-      <NavLink
-        to="/articles"
-        activeClassName="text-blue-500 font-bold"
-        className="text-black"
-      >
-        Articles
-      </NavLink>
-      <NavLink
-        to="/about"
-        activeClassName="text-blue-500 font-bold"
-        className="text-black"
-      >
-        About
-      </NavLink>
-    </>
+    <div className="mt-16 flex flex-col space-y-4">
+      {[
+        { to: "/", name: "Home" },
+        { to: "/contact", name: "Contact" },
+        { to: "/articles", name: "Articles" },
+        { to: "/about", name: "About" },
+      ].map((navItem, index) => (
+        <NavLink
+          key={index}
+          to={navItem.to}
+          activeClassName="text-blue-500 font-bold"
+          className="text-black"
+          onClick={() => setOpenNav(false)}
+        >
+          {navItem.name}
+        </NavLink>
+      ))}
+    </div>
   );
 
   return (
     <header className="h-28 px-4 lg:px-8">
       <div className="container mx-auto py-4">
         <div className="flex items-center justify-between">
-          <NavLink to="/" className="text-2xl font-bold text-blue-500">
-            <img src="/logo.png" alt="Elite Global AI" className="h-10" />
-          </NavLink>
-
+          <button
+            onClick={toggleNav}
+            className="md:hidden p-2 rounded hover:bg-gray-200 focus:outline-none focus:bg-gray-300 z-50"
+          >
+            <FontAwesomeIcon icon={openNav ? faTimes : faBars} />
+          </button>
           <nav className="hidden md:flex h-58 space-x-4">{navList()}</nav>
 
           <div className="flex justify-end ml-10">
@@ -76,12 +67,9 @@ const Navbar = () => {
             </button>
           </div>
 
-          <button
-            onClick={toggleNav}
-            className="md:hidden p-2 rounded hover:bg-gray-200 focus:outline-none focus:bg-gray-300 z-50"
-          >
-            <FontAwesomeIcon icon={openNav ? faTimes : faBars} />
-          </button>
+          <NavLink to="/" className="text-2xl font-bold text-blue-500">
+            <img src="/logo.png" alt="Elite Global AI" className="h-10" />
+          </NavLink>
         </div>
 
         {openNav && (
