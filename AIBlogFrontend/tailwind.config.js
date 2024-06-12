@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", "ui-sans-serif"],
-        serif: ["Merriweather", "ui-serif"],
+        serif: ["Lora", "ui-serif"],
         mono: ["Monaco", "ui-monospace"],
       },
     },
@@ -13,5 +13,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/forms')]
+  plugins: [require("@tailwindcss/forms")],
 };
