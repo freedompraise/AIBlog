@@ -34,24 +34,101 @@ const About = () => {
     <div className="container mx-auto px-2 lg:px-40 bg-white overflow-auto mb-4 text-black">
       <div className="space-y-4 px-0 lg:px-16 justify-center">
         <h1 className="text-3xl font-bold mt-6 mb-4">About Elite Global AI</h1>
+
         <p>
-          Elite Global AI empowers youth by demystifying artificial intelligence
-          (AI) and fostering financial empowerment. Through workshops,
-          mentorship, and resources, we make AI accessible, relatable, and
-          beneficial for personal and professional growth.
+          At Elite Global AI, we empower individuals and organizations across
+          Africa to leverage the vast potential of Artificial Intelligence (AI)
+          to drive innovation, improve productivity, and enhance daily life. We
+          demystify AI and make it accessible to everyone, from students to
+          entrepreneurs, by providing comprehensive education and training
+          programs that equip learners with the skills and knowledge needed to
+          harness AI's power. As an arm of Elite Global Intelligence
+          Technologies, our mission is also to empower youth by providing
+          workshops, mentorship programs, and accessible resources that foster
+          financial empowerment.
         </p>
+
+        <h2 className="text-2xl">Our Vision</h2>
         <p>
-          Our mission is to equip individuals with the skills and insights
-          needed to navigate the AI landscape confidently. We believe in
-          leveraging AI as a tool for positive change and opportunity, ensuring
-          that every individual can thrive in an AI-driven world.
+          We recognize that AI is rapidly shaping the future, and individuals,
+          especially youth, need to be equipped with the necessary skills and
+          insights to navigate this landscape effectively. Our vision is to
+          bridge the gap between AI's potential and the needs of the African
+          populace by providing accessible and relatable resources, workshops,
+          and mentorship programs.
         </p>
+
+        <h2 className="text-2xl">Our Mission</h2>
         <p>
-          Join us in exploring the transformative potential of AI and shaping a
-          future where technology enhances lives and creates meaningful
-          opportunities for all.
+          Our mission is to empower Africans by demystifying AI, fostering
+          financial empowerment, and creating opportunities for personal and
+          professional growth in an AI-driven world. We achieve this through a
+          range of initiatives that focus on AI education, financial literacy,
+          and career development.
+        </p>
+
+        <h2 className="text-2xl">Our Approach</h2>
+        <p>
+          We go beyond AI education and financial literacy by developing
+          practical AI tools and solutions that improve lives and productivity.
+          We create AI-powered applications addressing real-world challenges,
+          empower people to work smarter, and provide comprehensive training and
+          resources. Our workshops and mentorship programs offer hands-on
+          experience and personalized guidance, allowing participants to apply
+          AI concepts to real-world problems and develop practical skills. We
+          are also developing AI tools such as AI-powered learning assistants,
+          health and wellness apps, financial management tools, and productivity
+          assistants. By making these tools accessible to everyone, regardless
+          of education or technical expertise, we aim to democratize AI and
+          empower individuals to thrive in an AI-driven world.
+        </p>
+
+        <h2 className="text-2xl">Our Impact</h2>
+        <p>
+          Our programs and initiatives are designed to create meaningful
+          opportunities for individuals to succeed in the evolving landscape of
+          technology. We believe that AI can be a powerful tool for driving
+          socioeconomic development and addressing key challenges in Africa,
+          such as access to quality healthcare, food security, financial
+          inclusion, and education.
+        </p>
+
+        <h2 className="text-2xl">Our Commitment</h2>
+        <p>
+          {" "}
+          We are committed to ensuring that our AI initiatives are ethical,
+          inclusive, and transparent. We recognize the importance of addressing
+          ethical considerations and ensuring that AI is developed and deployed
+          in a way that prioritizes transparency, fairness, and accountability.
+        </p>
+
+        <h2 className="text-2xl">Our Partnerships</h2>
+        <p>
+          We collaborate with various stakeholders, including governments,
+          educational institutions, and private sector organizations, to develop
+          AI talent and drive innovation. We also engage in knowledge sharing
+          and research partnerships to stay at the forefront of AI developments
+          and best practices.
+        </p>
+
+        <h2 className="text-2xl">Our Future</h2>
+        <p>
+          {" "}
+          As AI continues to shape the future of Africa, we remain committed to
+          empowering the next generation of leaders and innovators. We believe
+          that by working together, we can harness the transformative power of
+          AI to create a brighter and more prosperous future for all Africans.
+        </p>
+
+        <h2 className="text-2xl">Join Us</h2>
+        <p>
+          {" "}
+          We invite individuals, organizations, and stakeholders across Africa
+          to join us in shaping the future of AI. Together, we can create a more
+          inclusive and prosperous Africa for all.
         </p>
       </div>
+
       <section className="space-y-4 px-0 lg:px-16 justify-center">
         <h2 className="text-2xl font-bold mt-6 mb-4">Our Team</h2>
         <p>

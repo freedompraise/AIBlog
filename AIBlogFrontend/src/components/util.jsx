@@ -1,4 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
+import { supabase } from "../services/supabaseClient";
 
 export const navList = () => {
   const location = useLocation();
@@ -72,4 +73,18 @@ export const scrollToFooter = () => {
     top: scrollHeight,
     behavior: "smooth",
   });
+};
+
+export const subscribeUser = async (email) => {
+  try {
+    const { data, error } = await supabase
+      .from("Subscribers")
+      .insert([{ email }]);
+    if (error) {
+      throw error;
+    }
+    return data;
+  } catch (error) {
+    throw error;
+  }
 };
