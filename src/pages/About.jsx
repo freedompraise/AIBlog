@@ -1,4 +1,3 @@
-import React from "react";
 import adminSupport from "../assets/team/admin-support.jpg";
 import brandDirector from "../assets/team/brand_strategy-director.jpg";
 import creativeDirector from "../assets/team/creative-director.jpg";
