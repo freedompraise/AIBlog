@@ -12,16 +12,13 @@ const LatestPosts = () => {
     const getPosts = async () => {
       try {
         const data = await fetchPosts();
-        console.log("data", data);
-        if (data.length === 0) {
-          throw new Error("No posts found.");
+        if (data.length !== 0) {
+          setLoading(false);
+          setPosts(data);
         }
       } catch (error) {
-        console.error("Error fetching posts", error);
         setError("Failed to load posts. Please try again later.");
-      } finally {
-        setLoading(false);
-        setPosts(data);
+        throw new Error("No posts found.");
       }
     };
     getPosts();
