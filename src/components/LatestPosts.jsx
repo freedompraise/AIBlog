@@ -44,7 +44,7 @@ const LatestPosts = () => {
 
   return (
     <section className="container my-8 mx-auto">
-      <div className="rectangle text-left text-white px-4 py-1 bg-black font-mono mt-4">
+      <div className="rectangle text-left text-white sm:mx-2 px-4 py-1 bg-black font-mono mt-4">
         LATEST POSTS
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
