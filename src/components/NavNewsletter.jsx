@@ -29,7 +29,7 @@ const NavNewsletter = () => {
     >
       <div className="mx-auto flex flex-col text-center">
         <img src={Logo} alt="logo" className="w-24 mx-auto mt-4" />
-        <h2 className="text-3xl font-sans mt-6 mb-4">
+        <h2 className="text-3xl font-sans mt-6 mb-4 px-2">
           Subscribe to our newsletter
         </h2>
         <p className="mb-4">
@@ -41,14 +41,14 @@ const NavNewsletter = () => {
             You've successfully subscribed!
           </p>
         ) : (
-          <div className="flex sm:flex-col subscription lg:flex-row w-full">
+          <div className="flex sm:flex-col subscription lg:flex-row">
             <input
               {...register("email", { required: true })}
               type="email"
               id="email"
               name="email"
               placeholder="johndoe@gmail.com"
-              className="border border-indigo-600 rounded-md p-2 w-full mb-4 focus:border-indigo-500"
+              className="border border-indigo-600 rounded-md p-2 mb-4 focus:border-indigo-500"
               required
             />
             <button className="bg-indigo-600 hover:bg-indigo-700 font-bold py-2 rounded-md mb-8">

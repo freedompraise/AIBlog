@@ -46,8 +46,8 @@ NEWSLETTER CONTAINER CLASSES
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 !important;
-  margin: -1rem 0 0 0;
+  padding: 0 1rem;
+  margin: 1rem 0 0 0;
   height: 65vh;
   width: 100vw;
 }
