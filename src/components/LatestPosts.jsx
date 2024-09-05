@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Loader } from "./index.js";
 import { fetchPosts } from "../services/api.js";
@@ -7,6 +7,8 @@ const LatestPosts = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 9;
 
   useEffect(() => {
     const getPosts = async () => {
@@ -23,6 +25,12 @@ const LatestPosts = () => {
     };
     getPosts();
   }, []);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   if (loading) {
     return (
@@ -48,12 +56,12 @@ const LatestPosts = () => {
         LATEST POSTS
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post) => (
+        {currentPosts.map((post) => (
           <div
             key={post.slug}
-            className="flex p-2 flex-col rounded-lg shadow-md"
+            className="flex p-2 flex-col rounded-lg shadow-lg bg-white"
           >
-            <Link to={`/post/${post.slug}`}>
+            <Link to={`/post/${post.slug}`} className="hover:text-indigo-600">
               <img
                 src={post.image ? post.image : "/default-photo.webp"}
                 alt={post.title}
@@ -74,6 +82,57 @@ const LatestPosts = () => {
             </Link>
           </div>
         ))}
+      </div>
+
+      <div className="flex justify-center mt-8">
+        <nav>
+          <ul className="inline-flex items-center space-x-2">
+            <li>
+              <button
+                onClick={() => paginate(1)}
+                className={`px-3 py-1 border rounded-md ${
+                  currentPage === 1
+                    ? "bg-gray-300"
+                    : "bg-white hover:bg-gray-200"
+                }`}
+                disabled={currentPage === 1}
+              >
+                First
+              </button>
+            </li>
+            {Array.from({
+              length: Math.ceil(posts.length / postsPerPage),
+            }).map((_, index) => (
+              <li key={index}>
+                <button
+                  onClick={() => paginate(index + 1)}
+                  className={`px-3 py-1 border rounded-md ${
+                    currentPage === index + 1
+                      ? "bg-indigo-600 text-white"
+                      : "bg-white hover:bg-gray-200"
+                  }`}
+                >
+                  {index + 1}
+                </button>
+              </li>
+            ))}
+            <li>
+              <button
+                onClick={() => paginate(Math.ceil(posts.length / postsPerPage))}
+                className={`px-3 py-1 border rounded-md ${
+                  currentPage === Math.ceil(posts.length / postsPerPage)
+                    ? "bg-gray-300"
+                    : "bg-white hover:bg-gray-200"
+                }`}
+                disabled={
+                  currentPage === Math.ceil(posts.length / postsPerPage)
+                }
+              >
+                Last
+              </button>
+            </li>
+          </ul>
+        </nav>
       </div>
     </section>
   );
