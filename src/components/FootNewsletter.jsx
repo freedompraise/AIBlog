@@ -4,12 +4,12 @@ import { subscribeUser } from "./util";
 
 const NavNewsletter = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState(null); // State for handling errors
+  const [error, setError] = useState(null);
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm(); // Access form errors
+  } = useForm();
 
   const onSubmit = async (data) => {
     try {
