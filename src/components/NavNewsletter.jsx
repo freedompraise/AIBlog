@@ -48,16 +48,16 @@ const NavNewsletter = () => {
               id="email"
               name="email"
               placeholder="johndoe@gmail.com"
-              className="border border-gray-700 rounded-md p-2 w-full mb-4 focus:border-indigo-500"
+              className="border border-indigo-600 rounded-md p-2 w-full mb-4 focus:border-indigo-500"
               required
             />
-            <button className="bg-indigo-600 hover:bg-indigo-700 font-bold py-2 w-full rounded-md mb-8">
+            <button className="bg-indigo-600 hover:bg-indigo-700 font-bold py-2 rounded-md mb-8">
               SUBMIT
             </button>
           </div>
         )}
 
-        <div className="flex ends items-end justify-center gap-4">
+        <div className="flex mt-8 ends items-end justify-center gap-4">
           <div>
             <p className="text-sm">Powered by:</p>
             <p className="text-sm font-mono">Elite Global Intelligence INC</p>
