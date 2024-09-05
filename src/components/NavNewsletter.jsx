@@ -60,7 +60,9 @@ const NavNewsletter = () => {
         <div className="flex mt-8 ends items-end justify-center gap-4">
           <div>
             <p className="text-sm">Powered by:</p>
-            <p className="text-sm font-mono">Elite Global Intelligence INC</p>
+            <p className="text-sm font-mono font-bold">
+              Elite Global Intelligence INC
+            </p>
           </div>
           <div className="links flex space-x-4">
             <a
