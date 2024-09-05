@@ -78,7 +78,7 @@ newsletter-container .subscription {
 @media (max-width: 768px) {
   .newsletter-container .subscription {
     flex-direction: column;
-    margin: 0 1rem !important;
+    margin: 0 0.4rem !important;
   }
 
   .newsletter-container button {
