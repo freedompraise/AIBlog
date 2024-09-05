@@ -1,11 +1,6 @@
 import React from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
-import {
-  Navbar,
-  NavNewsletter,
-  FootNewsletter,
-  Footer,
-} from "./components/index";
+import { Navbar, NavNewsletter, Footer } from "./components/index";
 import {
   Home,
   PostDetail,
@@ -40,7 +35,6 @@ function App() {
           <Route path="/admin" component={AdminDashboard} />
           <Route path="/login" component={Login} />
         </Switch>
-        <FootNewsletter />
       </div>
       <Footer />
     </div>

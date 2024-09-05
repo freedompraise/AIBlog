@@ -25,7 +25,7 @@ const NavNewsletter = () => {
   return (
     <form
       id="newsletter"
-      className="mt-4 rounded-lg text-black overflow-auto"
+      className="mt-4  px-4 lg:px-56 rounded-lg text-black overflow-auto"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="container mx-auto flex flex-col text-center">
