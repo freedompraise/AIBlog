@@ -37,6 +37,10 @@
   font-family: "Menlo", "Monaco", monospace;
 }
 
+/**
+NEWSLETTER CONTAINER CLASSES
+**/
+
 .newsletter-container {
   display: flex;
   flex-direction: column;
@@ -46,4 +50,47 @@
   margin: -1rem 0 0 0;
   height: 65vh;
   width: 100vw;
+}
+
+.newsletter-container .ends {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -5rem;
+  margin-right: -5rem;
+}
+newsletter-container .subscription {
+  align-items: center;
+}
+
+.newsletter-container input[type="email"] {
+  height: 3rem;
+  flex-grow: 2;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.newsletter-container button {
+  height: 3rem;
+  flex-grow: 1;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .newsletter-container .subscription {
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .newsletter-container button {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .newsletter-container input[type="email"] {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+  }
 }

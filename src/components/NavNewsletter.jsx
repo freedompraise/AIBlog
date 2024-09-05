@@ -41,7 +41,7 @@ const NavNewsletter = () => {
             You've successfully subscribed!
           </p>
         ) : (
-          <div className="flex sm:flex-col lg:flex-row w-full">
+          <div className="flex sm:flex-col subscription lg:flex-row w-full">
             <input
               {...register("email", { required: true })}
               type="email"
