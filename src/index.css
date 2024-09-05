@@ -26,3 +26,13 @@
     background-color: #f9f9f9;
   }
 }
+
+.font-serif {
+  font-family: "Bricolage", "Georgia", serif;
+}
+.font-sans {
+  font-family: "Grotesque", sans-serif;
+}
+.font-mono {
+  font-family: "Menlo", "Monaco", monospace;
+}
