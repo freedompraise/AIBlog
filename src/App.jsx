@@ -1,6 +1,11 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import { Navbar, FootNewsletter, Footer } from "./components/index";
+import { Route, Switch, useLocation } from "react-router-dom";
+import {
+  Navbar,
+  NavNewsletter,
+  FootNewsletter,
+  Footer,
+} from "./components/index";
 import {
   Home,
   PostDetail,
@@ -18,11 +23,13 @@ import clearLocalStorage from "./services/cache";
 clearLocalStorage();
 
 function App() {
+  const location = useLocation();
   return (
     <div className="bg-white w-screen overflow-x-hidden flex flex-col text-black mx-auto">
       <SpeedInsights />
       <Analytics />
       <Navbar />
+      {location.pathname === "/" && <NavNewsletter />}
       <div className="px-6 lg:px-56">
         <Switch>
           <Route path="/" exact component={Home} />

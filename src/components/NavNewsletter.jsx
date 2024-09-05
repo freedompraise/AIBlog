@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { useForm } from "react-hook-form";
+import backgroundImage from "../assets/images/background-1.jpg";
 
 const NavNewsletter = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -12,10 +13,19 @@ const NavNewsletter = () => {
   };
 
   return (
-    <form id="newsletter" className="container bg-black mt-8 px-4 overflow-auto" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      id="newsletter"
+      className="newsletter-container mt-8 overflow-auto"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <div className="container mx-auto flex flex-col text-center">
-        <h2 className="text-3xl font-sans mt-6 mb-4 text-white">Subscribe to our newsletter</h2>
-        <p className="text-white mb-4">Get the latest news and updates delivered straight to your inbox.</p>
+        <h2 className="text-3xl font-sans mt-6 mb-4 text-white">
+          Subscribe to our newsletter
+        </h2>
+        <p className="text-white mb-4">
+          Get the latest news and updates delivered straight to your inbox.
+        </p>
 
         {isSubmitted ? (
           <p className="text-lg mb-4 font-semibold font-mono text-gray-400">
