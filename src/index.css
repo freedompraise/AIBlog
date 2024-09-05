@@ -75,7 +75,7 @@ newsletter-container .subscription {
   padding: 0 2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .newsletter-container .subscription {
     flex-direction: column;
     margin: 0 0.4rem !important;
@@ -92,6 +92,9 @@ newsletter-container .subscription {
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
   }
+}
+
+@media (max-width: 760px) {
   .newsletter-container .ends {
     margin-right: 1rem;
     margin-left: 1rem;
