@@ -92,7 +92,7 @@ const LatestPosts = () => {
                 onClick={() => paginate(1)}
                 className={`px-3 py-1 border rounded-md ${
                   currentPage === 1
-                    ? "bg-gray-300"
+                    ? "bg-gray-100"
                     : "bg-white hover:bg-gray-200"
                 }`}
                 disabled={currentPage === 1}
@@ -121,7 +121,7 @@ const LatestPosts = () => {
                 onClick={() => paginate(Math.ceil(posts.length / postsPerPage))}
                 className={`px-3 py-1 border rounded-md ${
                   currentPage === Math.ceil(posts.length / postsPerPage)
-                    ? "bg-gray-300"
+                    ? "bg-gray-100"
                     : "bg-white hover:bg-gray-200"
                 }`}
                 disabled={
