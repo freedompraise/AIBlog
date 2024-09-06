@@ -9,7 +9,6 @@ export const navList = () => {
       {[
         { to: "/", name: "Home" },
         { to: "/contact", name: "Contact" },
-        { to: "/articles", name: "Articles" },
         { to: "/about", name: "About" },
       ].map((item) => (
         <NavLink
@@ -37,7 +36,6 @@ export const mobileNavList = () => {
       {[
         { to: "/", name: "Home" },
         { to: "/contact", name: "Contact" },
-        { to: "/articles", name: "Articles" },
         { to: "/about", name: "About" },
       ].map((item) => (
         <NavLink
