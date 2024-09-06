@@ -25,18 +25,18 @@ const NavNewsletter = () => {
   return (
     <form
       id="newsletter"
-      className="mt-4  px-4 lg:px-56 rounded-lg text-black overflow-auto"
+      className="px-4 lg:px-0 rounded-lg text-black"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="container mx-auto flex flex-col text-center">
-        <h2 className="text-xl font-bold my-4">Never Miss a Single Letter!</h2>
+        <h2 className="text-xl font-bold mb-4">Never Miss a Single Letter!</h2>
 
         {isSubmitted ? (
           <p className="text-lg text-blue-600 mb-4 font-semibold font-mono">
             You've successfully subscribed!
           </p>
         ) : (
-          <div className="flex flex-col px-0 lg:px-36 w-full">
+          <div className="flex flex-col px-0 w-full">
             <input
               {...register("email", { required: true })}
               type="email"
@@ -49,7 +49,7 @@ const NavNewsletter = () => {
             {errors.email && (
               <p className="text-red-500 text-sm mb-2">Email is required.</p>
             )}
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 w-full rounded-md mb-4">
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold font-mono py-2 w-full rounded-md mb-4">
               Sign Up
             </button>
             {error && (
