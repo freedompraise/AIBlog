@@ -29,10 +29,10 @@ const NavNewsletter = () => {
     >
       <div className="mx-auto flex flex-col text-center">
         <img src={Logo} alt="logo" className="w-24 mx-auto mt-4" />
-        <h2 className="text-3xl font-sans mt-6 mb-4 px-2">
+        <h2 className="text-3xl font-sans font-bold mt-6 mb-4 px-2">
           Subscribe to our newsletter
         </h2>
-        <p className="mb-4">
+        <p className="mb-4 text-lg">
           Get the latest news and updates delivered straight to your inbox.
         </p>
 
