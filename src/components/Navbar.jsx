@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <header className="h-12 px-4 lg:px-56">
-      <div className="container mx-auto py-4">
+      <div className="mx-auto p-4">
         <div className="flex items-center justify-between">
           <button
             onClick={toggleNav}
@@ -34,9 +34,9 @@ const Navbar = () => {
           </nav>
           <button
             onClick={handleSubscribe}
-            className="font-sans rounded-sm text-white p-1 lg:p-2 bg-blue-700 text-xs mr-4"
+            className="font-bold font-mono bg-indigo-500 hover:bg-blue-700 py-2 px-4 rounded-md focus:outline-none focus:bg-blue-700"
           >
-            SUBSCRIBE
+            Subscribe
           </button>
         </div>
 
