@@ -30,8 +30,8 @@ const About = () => {
   document.title = `About - Elite AI Blog`;
 
   return (
-    <div className="container mx-auto px-2 lg:px-40 bg-white overflow-auto mb-4 text-black">
-      <div className="space-y-4 px-0 lg:px-16 justify-center">
+    <div className="container mx-auto px-2 bg-white overflow-auto mb-4 text-black">
+      <div className="space-y-4 px-0 justify-center">
         <h1 className="text-3xl font-bold mt-6 mb-4">About Elite Global AI</h1>
 
         <p>
@@ -128,7 +128,7 @@ const About = () => {
         </p>
       </div>
 
-      <section className="space-y-4 px-0 lg:px-16 justify-center">
+      <section className="space-y-4 px-0 justify-center">
         <h2 className="text-2xl font-bold mt-6 mb-4">Our Team</h2>
         <p>
           Our team is composed of passionate and dedicated individuals who are
