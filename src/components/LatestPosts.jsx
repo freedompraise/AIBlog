@@ -51,7 +51,7 @@ const LatestPosts = () => {
   }
 
   return (
-    <section className="container my-8 mx-auto">
+    <section className="container mx-auto">
       <div className="rectangle text-left text-white sm:mx-2 px-4 py-1 bg-black font-mono mt-4">
         LATEST POSTS
       </div>
