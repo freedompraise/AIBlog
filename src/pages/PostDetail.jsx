@@ -1,38 +1,28 @@
 import { useState, useEffect } from "react";
-import { supabase } from "../services/supabaseClient";
 import { FormattedText, Loader } from "../components";
 import { Link } from "react-router-dom";
+import { fetchPost } from "../services/api";
 
 const PostDetail = ({
   match: {
     params: { slug },
   },
 }) => {
-  const [post, setPost] = useState(null);
+  const [post, setPost] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPost = async () => {
+    const getPost = async () => {
       try {
-        const { data, error } = await supabase
-          .from("Post")
-          .select("*")
-          .eq("slug", slug)
-          .single();
-
-        if (error) {
-          console.log("error");
-        } else {
-          setPost(data);
-        }
-
+        const data = await fetchPost(slug);
+        setPost(data);
         setLoading(false);
       } catch (error) {
-        throw error;
+        console.error("Error fetching post:", error);
       }
     };
 
-    fetchPost();
+    getPost();
   }, [slug]);
 
   if (loading) {
