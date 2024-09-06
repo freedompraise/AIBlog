@@ -37,7 +37,7 @@ const NavNewsletter = () => {
         </p>
 
         {isSubmitted ? (
-          <p className="text-lg mb-4 font-semibold font-mono text-gray-400">
+          <p className="text-lg mb-4 font-semibold font-mono text-indigo-600">
             You've successfully subscribed!
           </p>
         ) : (
@@ -51,7 +51,7 @@ const NavNewsletter = () => {
               className="border border-indigo-600 rounded-md p-2 mb-4 focus:border-indigo-500"
               required
             />
-            <button className="bg-indigo-600 hover:bg-indigo-700 font-bold py-2 rounded-md mb-8">
+            <button className="bg-indigo-500 hover:bg-indigo-700 font-bold py-2 rounded-md mb-8">
               SUBMIT
             </button>
           </div>
