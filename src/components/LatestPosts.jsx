@@ -66,10 +66,10 @@ const LatestPosts = () => {
               <img
                 src={post.image ? post.image : "/default-photo.webp"}
                 alt={post.title}
-                className="w-full h-64 object-cover rounded-t-lg"
+                className="w-full h-60 object-cover rounded-t-lg"
               />
               <div className="">
-                <p className="text-xs text-gray-500">
+                <p className="text-xs font-mono">
                   {DateTime.fromISO(post.created_at).toLocaleString(
                     DateTime.DATE_FULL
                   )}
