@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Loader } from "./index.js";
 import { fetchPosts } from "../services/api.js";
+import { DateTime } from "luxon";
 
 const LatestPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -68,6 +69,11 @@ const LatestPosts = () => {
                 className="w-full h-64 object-cover rounded-t-lg"
               />
               <div className="">
+                <p className="text-xs text-gray-500">
+                  {DateTime.fromISO(post.created_at).toLocaleString(
+                    DateTime.DATE_FULL
+                  )}
+                </p>
                 <h3
                   className={`text-3xl font-serif text-semibold pr-2 ${
                     post.slug === "unleashing-africa's-potential"

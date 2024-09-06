@@ -26,6 +26,7 @@
     "cookies-next": "^4.2.1",
     "craco": "^0.0.3",
     "dotenv": "^16.4.5",
+    "luxon": "^3.5.0",
     "react": "^18.2.0",
     "react-hook-form": "^7.50.1",
     "react-router-dom": "^5.2.0",
